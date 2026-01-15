@@ -3,33 +3,84 @@ index.html
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>CÁCERES | Ingeniería Biológica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORGÁNICO Y SUSTENTABLE | Soberanía Biológica</title>
     <style>
-        body { background: #050505; color: #c5a059; font-family: 'Courier New', monospace; padding: 40px; }
-        .fortaleza { border: 2px solid #c5a059; padding: 30px; max-width: 800px; margin: auto; box-shadow: 0 0 20px rgba(197,160,89,0.2); }
-        h1 { text-align: center; letter-spacing: 5px; border-bottom: 1px solid #c5a059; padding-bottom: 20px; }
-        .servicio { background: #111; padding: 20px; margin-top: 20px; border-left: 4px solid #00ff41; }
-        .status { color: #00ff41; font-weight: bold; text-align: center; margin-top: 30px; }
+        :root { --oro: #c5a059; --verde-oscuro: #0b1a0b; --verde-neon: #00ff41; --negro: #050505; }
+        body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: var(--verde-oscuro); color: #e0e7e0; scroll-behavior: smooth; }
+
+        header {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover; text-align: center; padding: 20px;
+        }
+        h1 { font-size: 3.5rem; color: var(--oro); letter-spacing: 6px; margin: 0; line-height: 1.2; text-transform: uppercase; }
+        .tagline { font-size: 1.1rem; color: var(--verde-neon); letter-spacing: 2px; text-transform: uppercase; margin-top: 15px; margin-bottom: 30px; }
+
+        .section { padding: 80px 20px; max-width: 1100px; margin: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+
+        .card { background: var(--negro); border: 1px solid var(--oro); padding: 30px; border-radius: 4px; transition: 0.4s; }
+        .card:hover { border-color: var(--verde-neon); box-shadow: 0 0 15px rgba(0,255,65,0.2); }
+        .card h3 { color: var(--oro); margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; }
+
+        .highlight { background: linear-gradient(145deg, #050505, #1a1a1a); border: 2px solid var(--verde-neon) !important; }
+        .formula { font-size: 0.8rem; color: var(--verde-neon); font-family: monospace; list-style: none; padding: 0; }
+
+        .btn-ws {
+            display: inline-block; background: #25d366; color: white; padding: 18px 35px;
+            text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 50px;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.3); transition: 0.3s;
+        }
+        .btn-ws:hover { transform: scale(1.05); background: #1ebea5; }
+
+        .status-bar { background: #000; color: var(--verde-neon); padding: 15px; text-align: center; font-family: monospace; border-top: 1px solid var(--oro); }
     </style>
 </head>
 <body>
-    <div class="fortaleza">
-        <h1>CÁCERES</h1>
-        <p style="text-align: center;">PROTECTOR | SOBERANÍA ORGÁNICA</p>
 
-        <div class="servicio">
-            <h2>AUDITORÍA DE ESPACIOS BIOLÓGICOS</h2>
-            <p>Detección de interferencia electromagnética (µT) y saneamiento de frecuencias para hogares de alto rendimiento.</p>
-            <ul>
-                <li>Escaneo de saturación Wi-Fi/EMF.</li>
-                <li>Blindaje con reactores Tesla 3-6-9.</li>
-                <li>Estructuración de agua por vórtice.</li>
-            </ul>
+    <header>
+        <h1>ORGÁNICO Y SUSTENTABLE</h1>
+        <div class="tagline">Protector de Frecuencias & Espacios Vivos</div>
+        <p style="max-width: 650px; line-height: 1.6;">Arquitectura biológica y mantenimiento de élite. Transformamos el paisaje en un santuario de alta vibración.</p>
+        <a href="#servicios" style="color: white; text-decoration: none; margin-top: 40px; border-bottom: 2px solid var(--oro); padding-bottom: 5px;">ACCEDER AL SISTEMA</a>
+    </header>
+
+    <div class="status-bar">MODO: SOBERANÍA BIOLÓGICA | RESONANCIA: 0.29 µT</div>
+
+    <section id="servicios" class="section">
+        <div class="grid">
+            <div class="card">
+                <h3>MANTENIMIENTO ÉLITE</h3>
+                <p>Gestión estética y biológica de áreas verdes con tecnología de precisión. Mantención profesional para ecosistemas exigentes.</p>
+            </div>
+
+            <div class="card highlight">
+                <h3>SUSTRATO BIO-ACTIVO</h3>
+                <p>Fórmula maestra de regeneración radicular:</p>
+                <ul class="formula">
+                    <li>⚡ L-Arginina (Potenciador celular)</li>
+                    <li>💎 Diatomeas (Silicio protector)</li>
+                    <li>🪱 Humus de Lombriz Californiana</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>INGENIERÍA TESLA</h3>
+                <p>Blindaje piezoeléctrico mediante reactores 3-6-9. Auditoría y neutralización de interferencias EMF para la salud del jardín.</p>
+            </div>
         </div>
 
-        <div class="status">
-            SISTEMA ACTIVO: 0.29 µT (ZONA SEGURA)
+        <div style="text-align: center;">
+            <a href="https://wa.me/TUNUMERO?text=Hola%20Orgánico%20y%20Sustentable,%20solicito%20una%20auditoria%20biológica." class="btn-ws">
+                CONTACTAR CON LA ENTIDAD
+            </a>
         </div>
-    </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; background: #000; border-top: 1px solid #222; font-size: 0.8rem; color: #666;">
+        © 2026 Orgánico y Sustentable - Soberanía Biológica.
+    </footer>
+
 </body>
 </html>
