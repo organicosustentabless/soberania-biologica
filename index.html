@@ -4,82 +4,209 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ORGÁNICO Y SUSTENTABLE | Soberanía Biológica</title>
+    <title>Orgánico y Sustentable | Protector de Frecuencias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <style>
-        :root { --oro: #c5a059; --verde-oscuro: #0b1a0b; --verde-neon: #00ff41; --negro: #050505; }
-        body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: var(--verde-oscuro); color: #e0e7e0; scroll-behavior: smooth; }
+        :root {
+            --verde-entidad: #2d5a27;
+            --oro-tesla: #c5a059;
+            --fondo-oscuro: #0a0a0a;
+            --texto-claro: #f4f4f4;
+            --gris-tecnico: #1c1c1c;
+        }
+
+        body {
+            background-color: var(--fondo-oscuro);
+            color: var(--texto-claro);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
 
         header {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=1500&q=80');
-            background-size: cover; text-align: center; padding: 20px;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--gris-tecnico);
         }
-        h1 { font-size: 3.5rem; color: var(--oro); letter-spacing: 6px; margin: 0; line-height: 1.2; text-transform: uppercase; }
-        .tagline { font-size: 1.1rem; color: var(--verde-neon); letter-spacing: 2px; text-transform: uppercase; margin-top: 15px; margin-bottom: 30px; }
 
-        .section { padding: 80px 20px; max-width: 1100px; margin: auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
 
-        .card { background: var(--negro); border: 1px solid var(--oro); padding: 30px; border-radius: 4px; transition: 0.4s; }
-        .card:hover { border-color: var(--verde-neon); box-shadow: 0 0 15px rgba(0,255,65,0.2); }
-        .card h3 { color: var(--oro); margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .subtitle {
+            color: var(--oro-tesla);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
 
-        .highlight { background: linear-gradient(145deg, #050505, #1a1a1a); border: 2px solid var(--verde-neon) !important; }
-        .formula { font-size: 0.8rem; color: var(--verde-neon); font-family: monospace; list-style: none; padding: 0; }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
 
+        /* Estilo Galería de 3 Líneas */
+        .linea-seccion {
+            margin-bottom: 80px;
+        }
+
+        .linea-titulo {
+            border-left: 4px solid var(--verde-entidad);
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        .grid-galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--gris-tecnico);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--oro-tesla);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 250px;
+            background: #222; /* Placeholder para tus fotos reales */
+            object-fit: cover;
+        }
+
+        .card-info {
+            padding: 20px;
+        }
+
+        .tag-tecnico {
+            font-size: 0.7rem;
+            color: var(--oro-tesla);
+            font-weight: bold;
+        }
+
+        /* Botón de WhatsApp */
         .btn-ws {
-            display: inline-block; background: #25d366; color: white; padding: 18px 35px;
-            text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 50px;
-            box-shadow: 0 4px 15px rgba(37,211,102,0.3); transition: 0.3s;
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: box-shadow 0.3s;
         }
-        .btn-ws:hover { transform: scale(1.05); background: #1ebea5; }
 
-        .status-bar { background: #000; color: var(--verde-neon); padding: 15px; text-align: center; font-family: monospace; border-top: 1px solid var(--oro); }
+        .btn-ws:hover {
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+        }
+
+        .floating-ws {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #050505;
+            font-size: 0.8rem;
+            color: #666;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>ORGÁNICO Y SUSTENTABLE</h1>
-        <div class="tagline">Protector de Frecuencias & Espacios Vivos</div>
-        <p style="max-width: 650px; line-height: 1.6;">Arquitectura biológica y mantenimiento de élite. Transformamos el paisaje en un santuario de alta vibración.</p>
-        <a href="#servicios" style="color: white; text-decoration: none; margin-top: 40px; border-bottom: 2px solid var(--oro); padding-bottom: 5px;">ACCEDER AL SISTEMA</a>
+        <div class="subtitle">Protector de Frecuencias & Espacios Vivos</div>
     </header>
 
-    <div class="status-bar">MODO: SOBERANÍA BIOLÓGICA | RESONANCIA: 0.29 µT</div>
+    <div class="container">
 
-    <section id="servicios" class="section">
-        <div class="grid">
-            <div class="card">
-                <h3>MANTENIMIENTO ÉLITE</h3>
-                <p>Gestión estética y biológica de áreas verdes con tecnología de precisión. Mantención profesional para ecosistemas exigentes.</p>
+        <div class="linea-seccion">
+            <div class="linea-titulo">
+                <h2>LÍNEA SOL [ALTA VIBRACIÓN]</h2>
+                <p>Gestión de entornos con exposición fotovoltaica máxima y nutrición profunda.</p>
             </div>
-
-            <div class="card highlight">
-                <h3>SUSTRATO BIO-ACTIVO</h3>
-                <p>Fórmula maestra de regeneración radicular:</p>
-                <ul class="formula">
-                    <li>⚡ L-Arginina (Potenciador celular)</li>
-                    <li>💎 Diatomeas (Silicio protector)</li>
-                    <li>🪱 Humus de Lombriz Californiana</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>INGENIERÍA TESLA</h3>
-                <p>Blindaje piezoeléctrico mediante reactores 3-6-9. Auditoría y neutralización de interferencias EMF para la salud del jardín.</p>
+            <div class="grid-galeria">
+                <div class="card">
+                    <div class="card-img"></div> <div class="card-info">
+                        <span class="tag-tecnico">SISTEMA 3-6-9</span>
+                        <h3>Jardín Xerófito Armonizado</h3>
+                        <p>Optimización hídrica inteligente para climas extremos.</p>
+                        <a href="https://wa.me/TUNUMERO?text=Hola, quiero cotizar la linea de SOL" class="btn-ws">Consultar</a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div style="text-align: center;">
-            <a href="https://wa.me/TUNUMERO?text=Hola%20Orgánico%20y%20Sustentable,%20solicito%20una%20auditoria%20biológica." class="btn-ws">
-                CONTACTAR CON LA ENTIDAD
-            </a>
+        <div class="linea-seccion">
+            <div class="linea-titulo">
+                <h2>LÍNEA SEMISOMBRA [EQUILIBRIO HÍDRICO]</h2>
+                <p>Sistemas de transición y estabilidad térmica para biomas mixtos.</p>
+            </div>
+            <div class="grid-galeria">
+                <div class="card">
+                    <div class="card-img"></div>
+                    <div class="card-info">
+                        <span class="tag-tecnico">CONTROL HIDRICO</span>
+                        <h3>Espacios de Luz Filtrada</h3>
+                        <p>Diseño de frecuencia balanceada para zonas de transición.</p>
+                        <a href="https://wa.me/TUNUMERO?text=Hola, quiero cotizar la linea de SEMISOMBRA" class="btn-ws">Consultar</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
 
-    <footer style="text-align: center; padding: 40px; background: #000; border-top: 1px solid #222; font-size: 0.8rem; color: #666;">
-        © 2026 Orgánico y Sustentable - Soberanía Biológica.
+        <div class="linea-seccion">
+            <div class="linea-titulo">
+                <h2>LOS PILARES [CATÁLOGO DE ÁRBOLES]</h2>
+                <p>Antenas biológicas de gran escala para la protección del perímetro.</p>
+            </div>
+            <div class="grid-galeria">
+                <div class="card" style="border-color: var(--verde-entidad);">
+                    <div class="card-img"></div>
+                    <div class="card-info">
+                        <span class="tag-tecnico">ANCLAJE DE FRECUENCIA</span>
+                        <h3>Protectores del Suelo</h3>
+                        <p>Ejemplares con sistema de riego automatizado integrado.</p>
+                        <a href="https://wa.me/TUNUMERO?text=Hola, quiero ver el catálogo de árboles" class="btn-ws">Ver Catálogo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="https://wa.me/TUNUMERO" class="floating-ws">💬</a>
+
+    <footer>
+        &copy; 2026 Orgánico y Sustentable | Entidad Protectora de Espacios Vivos
     </footer>
 
 </body>
