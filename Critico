@@ -1,0 +1,35 @@
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CÁCERES | Ingeniería Biológica</title>
+    <style>
+        body { background: #050505; color: #c5a059; font-family: 'Courier New', monospace; padding: 40px; }
+        .fortaleza { border: 2px solid #c5a059; padding: 30px; max-width: 800px; margin: auto; box-shadow: 0 0 20px rgba(197,160,89,0.2); }
+        h1 { text-align: center; letter-spacing: 5px; border-bottom: 1px solid #c5a059; padding-bottom: 20px; }
+        .servicio { background: #111; padding: 20px; margin-top: 20px; border-left: 4px solid #00ff41; }
+        .status { color: #00ff41; font-weight: bold; text-align: center; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="fortaleza">
+        <h1>CÁCERES</h1>
+        <p style="text-align: center;">PROTECTOR | SOBERANÍA ORGÁNICA</p>
+
+        <div class="servicio">
+            <h2>AUDITORÍA DE ESPACIOS BIOLÓGICOS</h2>
+            <p>Detección de interferencia electromagnética (µT) y saneamiento de frecuencias para hogares de alto rendimiento.</p>
+            <ul>
+                <li>Escaneo de saturación Wi-Fi/EMF.</li>
+                <li>Blindaje con reactores Tesla 3-6-9.</li>
+                <li>Estructuración de agua por vórtice.</li>
+            </ul>
+        </div>
+
+        <div class="status">
+            SISTEMA ACTIVO: 0.29 µT (ZONA SEGURA)
+        </div>
+    </div>
+</body>
+</html>
