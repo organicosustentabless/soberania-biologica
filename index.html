@@ -11,143 +11,147 @@ index.html
             --dorado-tesla: #b8860b;
             --verde-vida: #2e7d32;
             --negro: #0a0a0a;
-            --gris-card: #161616;
+            --gris-card: #1a1a1a;
             --blanco: #ffffff;
         }
 
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--negro); color: #e0e0e0; scroll-behavior: smooth; }
         
+        /* HEADER ORIGINAL CON LOGO PENDIENTE */
         header { 
             display: flex; align-items: center; justify-content: space-between; 
-            padding: 15px 40px; background: var(--blanco); border-bottom: 6px solid var(--dorado-tesla);
+            padding: 20px 40px; background: var(--blanco); border-bottom: 6px solid var(--dorado-tesla);
         }
-        .brand-info h1 { margin: 0; color: #1b3d18; font-size: 1.8rem; text-transform: uppercase; }
-        .brand-info h2 { margin: 5px 0 0; color: var(--dorado-tesla); font-size: 1.4rem; }
+        .brand-text h1 { margin: 0; color: #1b3d18; font-size: 2rem; text-transform: uppercase; }
+        .brand-text h2 { margin: 0; color: var(--dorado-tesla); font-size: 1.2rem; }
 
-        /* NAVEGACIÓN PROFESIONAL */
-        nav { background: #111; padding: 10px 40px; border-bottom: 1px solid #333; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: var(--blanco); text-decoration: none; margin: 0 15px; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
-        nav a:hover { color: var(--dorado-tesla); }
+        nav { background: #111; padding: 12px; border-bottom: 1px solid #333; text-align: center; sticky; top: 0; z-index: 1000; }
+        nav a { color: var(--blanco); text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
 
-        .container { max-width: 1300px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         .titulo-seccion { text-align: center; color: var(--dorado-tesla); text-transform: uppercase; margin: 40px 0; letter-spacing: 2px; }
 
-        /* GRID DE SERVICIOS */
-        .grid-master { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .card-box { background: var(--gris-card); border-radius: 15px; border: 1px solid #333; padding: 25px; transition: 0.3s; position: relative; }
-        .card-box:hover { border-color: var(--verde-vida); transform: translateY(-5px); }
-        .card-box h3 { color: var(--dorado-tesla); text-transform: uppercase; font-size: 1rem; border-bottom: 1px solid #444; padding-bottom: 10px; }
+        /* GRID DE SERVICIOS E INSUMOS */
+        .grid-master { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card-box { background: var(--gris-card); border-radius: 12px; border: 1px solid #333; padding: 25px; transition: 0.3s; position: relative; }
+        .card-box h3 { color: var(--dorado-tesla); text-transform: uppercase; font-size: 1rem; border-bottom: 1px solid #444; padding-bottom: 10px; margin-bottom: 15px; }
+
+        /* GALERIA VIVERO */
+        .galeria-vivero { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; }
+        .img-item { background: #222; height: 100px; border-radius: 5px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; font-size: 10px; }
+
+        /* BOTON FLOTANTE Y REDES */
+        .btn-ws-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 10000; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         
-        /* GALERÍA PRO VIVERO */
-        .galeria-pro { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-top: 15px; }
-        .foto-item { width: 100%; height: 120px; background: #222; border-radius: 8px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #555; overflow: hidden; }
-        .foto-item img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* BENEFICIO EXCLUSIVO */
-        .badge-premium { background: var(--verde-vida); color: white; padding: 5px 12px; font-size: 0.7rem; font-weight: bold; border-radius: 5px; position: absolute; top: 10px; right: 10px; }
-
-        /* REPRODUCTOR DE MÚSICA */
-        .music-player { position: fixed; bottom: 110px; right: 30px; background: #111; padding: 10px; border-radius: 10px; border: 1px solid var(--dorado-tesla); z-index: 999; }
-
-        .btn-ws-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; width: 65px; height: 65px; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); z-index: 9999; }
-        
-        footer { text-align: center; padding: 40px; color: #444; background: #050505; }
+        /* PLAYER DISCRETO */
+        .audio-ctrl { position: fixed; bottom: 30px; left: 30px; background: #111; border: 1px solid var(--dorado-tesla); padding: 10px; border-radius: 50px; cursor: pointer; color: var(--dorado-tesla); z-index: 10000; font-size: 12px; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="brand-info">
+    <div class="logo-placeholder" style="width: 80px; height: 80px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ccc;">LOGO</div>
+    <div class="brand-text">
         <h1>Orgánico y Sustentable</h1>
-        <h2>Sembrando ConCiencia</h2>
-        <p><i class="fas fa-microscope"></i> Ingeniería Botánica & Soberanía Biotecnológica</p>
+        <h2>Sembrando ConCiencia <i class="fas fa-microscope"></i></h2>
     </div>
 </header>
 
 <nav>
-    <a href="#servicios">Servicios</a>
+    <a href="#servicios">Catálogo de Servicios e Insumos</a>
     <a href="#vivero">Vivero en Línea</a>
-    <a href="#investigaciones">Investigaciones</a>
-    <a href="#redes">Comunidad Facebook</a>
+    <a href="#investigaciones">Investigaciones de Campo</a>
+    <a href="#facebook">Facebook</a>
 </nav>
 
-<div class="music-player">
-    <p style="font-size: 10px; margin: 0 0 5px 0; color: var(--dorado-tesla);">Frecuencia: Without Dubbing</p>
-    <iframe width="200" height="113" src="https://www.youtube.com/embed/354Md5t7wE4?autoplay=0&controls=1" title="Laguna Pai" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
 <div class="container" id="servicios">
-    <h2 class="titulo-seccion">Consola de Servicios e Insumos</h2>
+    <h2 class="titulo-seccion">Catálogo de Servicios e Insumos</h2>
     <div class="grid-master">
         
         <div class="card-box">
-            <h3>Diseño de Espacios Digitales</h3>
-            <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-                <li><i class="fas fa-bolt" style="color:var(--dorado-tesla)"></i> <b>Saturación Electromagnética</b></li>
-                <li><i class="fas fa-wave-square"></i> Magnetic Field Standard: <b>1V/m</b></li>
-                <li><i class="fas fa-file-pdf"></i> 3 Propuestas Técnicas + Fotomontaje.</li>
-                <li><i class="fas fa-calculator"></i> Presupuesto de Obra Preliminar.</li>
+            <h3>Mantenimiento Integral</h3>
+            <p style="font-size: 0.9rem;">Planes 2 visitas (14 días) o 4 visitas (7 días).</p>
+            <ul style="font-size: 0.85rem; padding-left: 15px;">
+                <li>Podas, rebajes y levantes (2m).</li>
+                <li><b>Mullido, Aireado y Corte de Césped.</b></li>
+                <li>Informe de Salud Vegetal.</li>
             </ul>
-            <div style="margin-top:10px; font-weight:bold; color:var(--dorado-tesla)">VALOR: 1 UF</div>
         </div>
 
-        <div class="card-box" style="border: 2px solid var(--verde-vida);">
-            <div class="badge-premium">PLAN PREMIUM</div>
-            <h3>Mantenimiento Integral</h3>
-            <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-                <li><i class="fas fa-check"></i> Corte de Césped, Mullido y Aireación.</li>
-                <li><i class="fas fa-check"></i> Podas Fitosanitarias hasta 2m.</li>
-                <li><i class="fas fa-star" style="color: gold;"></i> <b>Plantación e Instalación GRATIS</b></li>
+        <div class="card-box">
+            <h3>Diseño de Espacios Digitales</h3>
+            <ul style="font-size: 0.85rem; padding-left: 15px;">
+                <li>Visita Técnica + Fotomontaje.</li>
+                <li><b>Saturación Electromagnética (1V/m).</b></li>
+                <li>3 Propuestas Técnicas.</li>
+                <li><b>Presupuesto de Obra Preliminar.</b></li>
+            </ul>
+            <p style="color: var(--dorado-tesla); font-weight: bold;">VALOR: 1 UF</p>
+        </div>
+
+        <div class="card-box">
+            <h3>Sistemas de Control Hídrico</h3>
+            <p style="font-size: 0.9rem;">Diseño y construcción de sistemas de riego eficientes.</p>
+        </div>
+
+        <div class="card-box">
+            <h3>Catálogo de Insumos</h3>
+            <ul style="font-size: 0.85rem; padding-left: 15px;">
+                <li>Tierra de Hoja Seleccionada.</li>
+                <li><b>Sustrato Biológico de Germinación + Guía.</b></li>
+                <li>Humus Líquido (500cc / 1000cc).</li>
             </ul>
         </div>
     </div>
 </div>
 
 <div class="container" id="vivero">
-    <h2 class="titulo-seccion">Vivero en Línea: Selección por Radiación</h2>
+    <h2 class="titulo-seccion">Vivero en Línea</h2>
     <div class="grid-master">
         <div class="card-box">
-            <h3>Especies: Alta Radiación Solar</h3>
-            <div class="galeria-pro">
-                <div class="foto-item">Foto Especie 1 <br> $X.XXX</div>
-                <div class="foto-item">Foto Especie 2 <br> $X.XXX</div>
-                <div class="foto-item">Foto Especie 3 <br> $X.XXX</div>
+            <h3>Alta Radiación Solar</h3>
+            <div class="galeria-vivero">
+                <div class="img-item">Foto 1</div><div class="img-item">Foto 2</div><div class="img-item">Foto 3</div>
             </div>
         </div>
         <div class="card-box">
-            <h3>Especies: Baja Radiación (Sombra)</h3>
-            <div class="galeria-pro">
-                <div class="foto-item">Interior A <br> $X.XXX</div>
-                <div class="foto-item">Interior B <br> $X.XXX</div>
+            <h3>Baja Radiación Solar</h3>
+            <div class="galeria-vivero">
+                <div class="img-item">Foto A</div><div class="img-item">Foto B</div><div class="img-item">Foto C</div>
             </div>
         </div>
         <div class="card-box">
             <h3>Catálogo de Árboles</h3>
-            <p style="font-size: 11px;">Plantación nutritiva incluida para clientes de planes.</p>
-            <div class="galeria-pro">
-                <div class="foto-item">Árbol Sol <br> $X.XXX</div>
-                <div class="foto-item">Árbol Frutal <br> $X.XXX</div>
-            </div>
+            <p style="font-size: 0.75rem; color: var(--verde-vida);">* Plantación e Instalación GRATIS para clientes con Plan.</p>
         </div>
     </div>
 </div>
 
-<div class="container" id="redes" style="text-align:center;">
-    <h2 class="titulo-seccion">Comunidad Sembrando ConCiencia</h2>
-    <div class="card-box" style="display: inline-block; padding: 50px; min-width: 300px;">
-        <i class="fab fa-facebook" style="font-size: 5rem; color: #1877f2;"></i>
-        <h3>Conéctate en Facebook</h3>
-        <a href="https://www.facebook.com/organico.sustentable.1" target="_blank" style="color: var(--blanco); text-decoration: none; border: 1px solid var(--blanco); padding: 10px 20px; border-radius: 5px;">VISITAR PERFIL</a>
+<div class="container" id="investigaciones">
+    <h2 class="titulo-seccion">Galería del Pensamiento</h2>
+    <div class="card-box" style="text-align: center;">
+        <p>Investigaciones: Biofísica - Universo Eléctrico - Óxido de Grafeno</p>
+        <a href="#" style="color: var(--dorado-tesla);">[ Ver Documentos PDF ]</a>
     </div>
 </div>
 
-<footer>
-    <p>Orgánico y Sustentable © 2026 | Cáceres Protector de Frecuencias</p>
-</footer>
+<div class="container" id="facebook" style="text-align: center; padding-bottom: 100px;">
+    <h2 class="titulo-seccion">Comunidad Facebook</h2>
+    <a href="https://www.facebook.com/organico.sustentable.1" target="_blank" style="font-size: 4rem; color: #1877f2;"><i class="fab fa-facebook"></i></a>
+</div>
 
-<a href="https://wa.me/56966911115" class="btn-ws-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
+<div class="audio-ctrl" onclick="document.getElementById('bg-music').play()">
+    <i class="fas fa-play"></i> SINTONIZAR FRECUENCIA
+</div>
+<audio id="bg-music" loop>
+    <source src="https://www.youtube.com/watch?v=354Md5t7wE4" type="audio/mpeg">
+</audio>
+
+<a href="https://wa.me/56966911115" class="btn-ws-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<footer>
+    <p>Orgánico y Sustentable © 2026</p>
+</footer>
 
 </body>
 </html>
