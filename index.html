@@ -4,124 +4,147 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orgánico y Sustentable | Ingeniería de Espacios Vivos</title>
+    <title>Sembrando ConCiencia | Ingeniería de Espacios Vivos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --dorado-tesla: #b8860b;
-            --verde-ejecucion: #2e7d32;
+            --verde-vida: #2e7d32;
             --negro: #0a0a0a;
-            --gris-card: #1a1a1a;
+            --gris-card: #161616;
             --blanco: #ffffff;
         }
 
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--negro); color: #e0e0e0; scroll-behavior: smooth; }
         
-        header { text-align: center; padding: 60px 20px; background: var(--blanco); color: #111; border-bottom: 8px solid var(--dorado-tesla); }
-        header h1 { font-size: 2.5rem; margin: 0; color: #1b3d18; text-transform: uppercase; }
+        /* HEADER CON LOGO A LA IZQUIERDA */
+        header { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 20px 50px; 
+            background: var(--blanco); 
+            border-bottom: 6px solid var(--dorado-tesla);
+        }
+        .logo-box { display: flex; align-items: center; gap: 20px; }
+        .logo-img { height: 80px; width: auto; } /* Aquí cargará tu logo enviado */
+        .brand-text h1 { margin: 0; color: #1b3d18; font-size: 2.2rem; text-transform: uppercase; }
+        .brand-text p { margin: 0; color: var(--verde-vida); font-weight: bold; display: flex; align-items: center; gap: 10px; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
 
-        .titulo-seccion { text-align: center; color: var(--dorado-tesla); text-transform: uppercase; margin: 50px 0 30px; letter-spacing: 2px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .titulo-seccion { text-align: center; color: var(--dorado-tesla); text-transform: uppercase; margin: 40px 0; letter-spacing: 2px; }
 
-        /* SERVICIO DE CONTROL DE DESEQUILIBRIOS */
-        .servicio-especial { 
-            background: linear-gradient(145deg, #1b3d18, #0a0a0a); 
-            padding: 40px; 
-            border-radius: 20px; 
-            border: 2px solid var(--dorado-tesla);
-            margin-bottom: 50px;
-            text-align: center;
+        /* GRID UNIFICADO DE CATÁLOGO */
+        .grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
+        
+        .card-box { 
+            background: var(--gris-card); 
+            border-radius: 15px; 
+            border: 1px solid #333; 
+            padding: 25px; 
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
         }
-        .servicio-especial i { font-size: 3rem; color: var(--dorado-tesla); margin-bottom: 20px; }
+        .card-box:hover { border-color: var(--dorado-tesla); transform: translateY(-5px); }
+        .card-box h3 { color: var(--dorado-tesla); margin-top: 0; text-transform: uppercase; font-size: 1.1rem; border-bottom: 1px solid #444; padding-bottom: 10px; }
+        
+        .lista-servicio { list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.6; flex-grow: 1; }
+        .lista-servicio li { margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px; }
+        .lista-servicio li i { color: var(--verde-vida); margin-top: 4px; }
 
-        /* PROTOCOLO VISITA 1 UF */
-        .protocolo-box { background: #111; padding: 30px; border-radius: 20px; border: 1px solid #333; margin-bottom: 50px; }
-        .protocolo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .paso { text-align: center; padding: 15px; }
+        .precio-box { 
+            background: rgba(184, 134, 11, 0.15); 
+            padding: 10px; 
+            border-radius: 8px; 
+            text-align: center; 
+            font-weight: bold; 
+            color: var(--dorado-tesla);
+            margin-top: 15px;
+        }
 
-        /* GRID CATALOGO */
-        .grid-catalogo { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card-ingenieria { background: var(--gris-card); border-radius: 15px; border: 1px solid #333; overflow: hidden; transition: 0.3s; text-align: center; padding-bottom: 20px; }
-        .card-ingenieria:hover { border-color: var(--verde-ejecucion); transform: translateY(-5px); }
-        .img-vivero { height: 180px; background: #222; display: flex; align-items: center; justify-content: center; color: #444; }
+        /* REDES Y FLOTANTE */
+        .social-box { text-align: center; padding: 50px; }
+        .social-box a { color: var(--blanco); font-size: 3.5rem; margin: 0 25px; transition: 0.3s; }
+        .social-box a:hover { color: var(--dorado-tesla); }
 
-        /* REDES SOCIALES ELEGANTES */
-        .social-box { text-align: center; padding: 40px; margin-top: 60px; }
-        .social-box a { color: var(--blanco); font-size: 4rem; margin: 0 30px; transition: 0.3s; }
-        .social-box a:hover { color: var(--dorado-tesla); transform: scale(1.1); }
-
-        /* BOTÓN WHATSAPP FLOTANTE ELEGANTE */
         .btn-ws-float { 
             position: fixed; bottom: 30px; right: 30px; 
             background-color: #25d366; color: white; 
-            width: 70px; height: 70px; border-radius: 50px; 
+            width: 65px; height: 65px; border-radius: 50px; 
             display: flex; align-items: center; justify-content: center; 
-            font-size: 38px; box-shadow: 0 6px 20px rgba(0,0,0,0.6); 
-            z-index: 9999; text-decoration: none; transition: 0.3s;
+            font-size: 35px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); z-index: 9999; 
         }
-        .btn-ws-float:hover { transform: scale(1.1); background-color: #128c7e; }
 
-        footer { text-align: center; padding: 40px; color: #555; border-top: 1px solid #222; }
+        footer { text-align: center; padding: 30px; border-top: 1px solid #222; font-size: 0.8rem; color: #666; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Orgánico y Sustentable</h1>
-    <p>Cáceres Protector de Frecuencias & Espacios Vivos</p>
+    <div class="logo-box">
+        <img src="logo-organico.png" alt="Logo" class="logo-img"> 
+        <div class="brand-text">
+            <h1>Sembrando ConCiencia</h1>
+            <p><i class="fas fa-microscope"></i> Ingeniería Botánica & Espacios Vivos</p>
+        </div>
+    </div>
 </header>
 
 <div class="container">
 
-    <section class="servicio-especial">
-        <i class="fas fa-shield-virus"></i>
-        <h2>Servicio de Control de Desequilibrios</h2>
-        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
-            Aplicación Foliar-Radicular avanzada para especies en desequilibrio o presencia de plagas. 
-            Utilizamos <strong>SiO2 (Diatomea)</strong> para restablecer la salud biológica: <strong>Controla y Nutre</strong> simultáneamente.
-        </p>
-        <a href="https://wa.me/56966911115?text=Deseo%20contratar%20el%20Servicio%20de%20Control%20de%20Desequilibrios" 
-           style="display:inline-block; margin-top:20px; padding:15px 30px; background:var(--dorado-tesla); color:black; font-weight:bold; border-radius:8px; text-decoration:none;">
-           SOLICITAR INTERVENCIÓN
-        </a>
-    </section>
+    <h2 class="titulo-seccion">Catálogo de Insumos y Servicios</h2>
 
-    <section class="protocolo-box">
-        <h2 style="text-align: center; color: var(--dorado-tesla);">Protocolo de Diseño (1 UF)</h2>
-        <div class="protocolo-grid">
-            <div class="paso">
-                <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: var(--verde-ejecucion);"></i>
-                <h4>Visita Técnica</h4>
-                <p>Evaluación de radiación y terreno.</p>
-            </div>
-            <div class="paso">
-                <i class="fas fa-laptop-code" style="font-size: 2rem; color: var(--verde-ejecucion);"></i>
-                <h4>Fotomontaje</h4>
-                <p>Diseño digital junto a Gemini.</p>
-            </div>
-            <div class="paso">
-                <i class="fas fa-file-pdf" style="font-size: 2rem; color: var(--verde-ejecucion);"></i>
-                <h4>Entregable</h4>
-                <p>PDF con 3 propuestas de ingeniería.</p>
-            </div>
+    <div class="grid-servicios">
+        
+        <div class="card-box">
+            <h3>Mantenimiento Integral de Áreas Verdes</h3>
+            <ul class="lista-servicio">
+                <li><i class="fas fa-check"></i> <b>Plan Base:</b> 2 visitas (cada 14 días).</li>
+                <li><i class="fas fa-check"></i> <b>Plan Temporada Alta:</b> 4 visitas (cada 7 días).</li>
+                <li><i class="fas fa-leaf"></i> Jardinería de Campo y Desmalezado.</li>
+                <li><i class="fas fa-cut"></i> Podas fitosanitarias, rebajes y levantes (hasta 2m).</li>
+                <li><i class="fas fa-notes-medical"></i> Informe técnico de Salud Vegetal.</li>
+                <li><i class="fas fa-wind"></i> Mullido / Aireación de tierra.</li>
+                <li><i class="fas fa-shredder"></i> Orillado, corte de césped y limpieza.</li>
+            </ul>
+            <div class="precio-box">Consultar suscripción mensual</div>
         </div>
-    </section>
 
-    <h2 class="titulo-seccion">Catálogo de Servicios e Insumos</h2>
-    <div class="grid-catalogo">
-        <div class="card-ingenieria">
-            <div class="img-vivero">FOTO TIERRA DE HOJA</div>
-            <div class="info"><h4>Tierra de Hoja</h4><p>Base Forestal Seleccionada</p></div>
+        <div class="card-box">
+            <h3>Control de Desequilibrios</h3>
+            <p style="font-size: 0.9rem;">Intervención biotecnológica para especies bajo estrés o ataque de patógenos.</p>
+            <ul class="lista-servicio">
+                <li><i class="fas fa-atom"></i> Aplicación Foliar y Radicular.</li>
+                <li><i class="fas fa-shield-alt"></i> Uso de SiO2 (Diatomea) de alta pureza.</li>
+                <li><i class="fas fa-plus-circle"></i> Acción dual: Control orgánico y Nutrición.</li>
+                <li><i class="fas fa-sync"></i> Restablecimiento del balance mineral.</li>
+            </ul>
+            <div class="precio-box">Evaluación según superficie</div>
         </div>
-        <div class="card-ingenieria">
-            <div class="img-vivero">FOTO SÚPER SUSTRATO</div>
-            <div class="info"><h4>Súper Sustrato</h4><p>L-Arginina + Diatomea + Humus</p></div>
+
+        <div class="card-box">
+            <h3>Diseño de Espacios Vegetales</h3>
+            <ul class="lista-servicio">
+                <li><i class="fas fa-map-marked-alt"></i> Visita Técnica en terreno.</li>
+                <li><i class="fas fa-desktop"></i> Diseño Digital (Fotomontaje).</li>
+                <li><i class="fas fa-file-pdf"></i> Entrega de <b>3 Propuestas Técnicas</b>.</li>
+                <li><i class="fas fa-sun"></i> Análisis basado en características medioambientales y radiación.</li>
+            </ul>
+            <div class="precio-box">Valor Consultoría: 1 UF</div>
         </div>
-        <div class="card-ingenieria">
-            <div class="img-vivero">FOTO SiO2</div>
-            <div class="info"><h4>Insumo SiO2</h4><p>Control y Nutrición Foliar</p></div>
+
+        <div class="card-box">
+            <h3>Catálogo de Insumos</h3>
+            <ul class="lista-servicio">
+                <li><i class="fas fa-box-open"></i> Tierra de Hoja Seleccionada.</li>
+                <li><i class="fas fa-flask"></i> Súper Sustrato (L-Arginina + Humus + SiO2).</li>
+                <li><i class="fas fa-vial"></i> Activador Radicular Concentrado.</li>
+            </ul>
+            <div class="precio-box">Venta directa y Joint Venture</div>
         </div>
+
     </div>
 
     <section class="social-box">
@@ -132,7 +155,7 @@ index.html
 </div>
 
 <footer>
-    <p>Orgánico y Sustentable © 2026 | Cáceres Protector de Frecuencias</p>
+    <p>Sembrando ConCiencia © 2026 | Orgánico y Sustentable</p>
 </footer>
 
 <a href="https://wa.me/56966911115" class="btn-ws-float" target="_blank">
