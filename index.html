@@ -35,16 +35,17 @@ index.html
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .grid-master { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card-box { background: var(--gris-card); border-radius: 12px; border: 1px solid #333; overflow: hidden; position: relative; }
+        .card-box { background: var(--gris-card); border-radius: 12px; border: 1px solid #333; overflow: hidden; position: relative; margin-bottom: 20px; }
         .card-img { width: 100%; height: 160px; background: #222; display: flex; align-items: center; justify-content: center; color: #444; border-bottom: 2px solid var(--dorado-tesla); }
         .card-content { padding: 20px; }
         .card-content h3 { color: var(--dorado-tesla); text-transform: uppercase; font-size: 1rem; margin: 0 0 15px 0; border-bottom: 1px solid #333; padding-bottom: 10px; }
 
         .convenio-pago { background: var(--verde-vida); color: white; padding: 5px 10px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
 
-        .paradigma-fila { background: #111; border-left: 4px solid var(--dorado-tesla); margin-bottom: 15px; padding: 20px; display: flex; align-items: center; gap: 20px; transition: 0.3s; }
-        .btn-ws-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 10000; box-shadow: 0 4px 15px rgba(0,0,0,0.5); text-decoration: none; }
-        
+        .paradigma-fila { background: #111; border-left: 4px solid var(--dorado-tesla); margin-bottom: 15px; padding: 20px; display: flex; align-items: center; gap: 20px; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 1px solid var(--dorado-tesla); margin-top: 15px; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
         footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #222; }
     </style>
 </head>
@@ -62,7 +63,7 @@ index.html
     <a onclick="mostrarSeccion('servicios')">Insumos y Servicios</a>
     <a onclick="mostrarSeccion('vivero')">Vivero en Línea</a>
     <a onclick="mostrarSeccion('investigaciones')">Paradigmas del Pensamiento</a>
-    <a onclick="mostrarSeccion('redes')">Facebook</a>
+    <a onclick="mostrarSeccion('redes')">Comunidad Facebook</a>
 </nav>
 
 <div class="container">
@@ -70,9 +71,8 @@ index.html
     <section id="servicios" class="seccion-ventana activa">
         <h2 style="color:var(--dorado-tesla); text-transform:uppercase; text-align:center; margin-bottom:40px;">Catálogo de Servicios e Insumos</h2>
         <div class="grid-master">
-            
             <div class="card-box">
-                <div class="card-img">[Imagen Mantenimiento]</div>
+                <div class="card-img">[Mantenimiento]</div>
                 <div class="card-content">
                     <div class="convenio-pago">CONVENIO PAGO MENSUAL</div>
                     <h3>Mantenimiento Integral</h3>
@@ -83,9 +83,8 @@ index.html
                     </ul>
                 </div>
             </div>
-
             <div class="card-box">
-                <div class="card-img">[Imagen Diseño]</div>
+                <div class="card-img">[Diseño]</div>
                 <div class="card-content">
                     <h3>Diseño de Espacios-Escudos Vegetales</h3>
                     <ul style="font-size: 0.85rem; padding-left:15px;">
@@ -93,43 +92,33 @@ index.html
                         <li>Fotomontaje + 3 Propuestas Técnicas.</li>
                         <li>Presupuesto de Obra Preliminar.</li>
                     </ul>
-                    <p style="color:var(--dorado-tesla); font-weight:bold;">VALOR: 1 UF</p>
                 </div>
             </div>
-
             <div class="card-box">
-                <div class="card-img">[Imagen Hídrico]</div>
+                <div class="card-img">[Hídrico]</div>
                 <div class="card-content">
                     <h3>Sistemas de Control Hídrico</h3>
                     <ul style="font-size: 0.85rem; padding-left:15px;">
-                        <li>Diseño y Construcción de Sistemas Eficientes.</li>
-                        <li>Incluye Análisis de Campo y Factores Técnicos.</li>
-                        <li>Planimetría y Presupuesto de Ejecución.</li>
+                        <li>Diseño, Construcción, Análisis de Campo y Planimetría.</li>
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <section id="vivero" class="seccion-ventana">
+        <h2 style="color:var(--dorado-tesla); text-transform:uppercase; text-align:center; margin-bottom:40px;">Vivero en Línea</h2>
+        <div class="grid-master">
             <div class="card-box">
-                <div class="card-img">[Imagen Control]</div>
-                <div class="card-content">
-                    <h3>Control de Desequilibrios</h3>
-                    <ul style="font-size: 0.85rem; padding-left:15px;">
-                        <li>Aplicación Foliar-Radicular con SiO2.</li>
-                        <li>Control de Plagas y Nutrición Celular.</li>
-                        <li>Restablecimiento del Equilibrio Biológico.</li>
-                    </ul>
-                </div>
+                <div class="card-content"><h3>Alta Radiación Solar</h3><p style="font-size:0.8rem;">Especies termófilas y heliófitas.</p></div>
             </div>
-
             <div class="card-box">
-                <div class="card-img">[Imagen Insumos]</div>
+                <div class="card-content"><h3>Baja Radiación Solar</h3><p style="font-size:0.8rem;">Especies de umbría y sotobosque.</p></div>
+            </div>
+            <div class="card-box">
                 <div class="card-content">
-                    <h3>Insumos Biológicos</h3>
-                    <ul style="font-size: 0.85rem; padding-left:15px;">
-                        <li>Sustrato Biológico de Germinación + Guía.</li>
-                        <li>Humus Líquido (500cc / 1000cc).</li>
-                        <li>Tierra de Hoja Seleccionada.</li>
-                    </ul>
+                    <h3>Árboles</h3>
+                    <p style="font-size:0.8rem; color:var(--verde-vida);">* Plantación e Instalación GRATIS para convenios.</p>
                 </div>
             </div>
         </div>
@@ -138,35 +127,25 @@ index.html
     <section id="investigaciones" class="seccion-ventana">
         <h2 style="color:var(--dorado-tesla); text-transform:uppercase; text-align:center; margin-bottom:40px;">Paradigmas del Pensamiento Moderno</h2>
         
-        <div class="paradigma-fila">
-            <i class="fas fa-dna"></i>
-            <div class="paradigma-info"><h4>Biofísica</h4><p>Estudio de fenómenos físicos en sistemas biológicos.</p></div>
-        </div>
-        <div class="paradigma-fila">
-            <i class="fas fa-bolt"></i>
-            <div class="paradigma-info"><h4>Paradigma Universo Eléctrico</h4><p>La fuerza fundamental de la vida y el cosmos.</p></div>
-        </div>
-        <div class="paradigma-fila">
-            <i class="fas fa-hourglass-half"></i>
-            <div class="paradigma-info"><h4>Paradigma del Tiempo</h4><p>Ciclos de regeneración y temporalidad biológica.</p></div>
-        </div>
-        <div class="paradigma-fila">
-            <i class="fas fa-male"></i>
-            <div class="paradigma-info"><h4>Paradigma de la Biología - SISTEMA BIOELECTRICO</h4><p>El organismo como antena y procesador de frecuencias.</p></div>
-        </div>
-        <div class="paradigma-fila">
-            <i class="fas fa-guitar"></i>
-            <div class="paradigma-info">
-                <h4>Música Consciente & Creatividad</h4>
-                <p>Estudio de campo: Laguna Pai - La Ruta Natural (#ElCaminoEsLargo).</p>
-                <a href="https://youtu.be/YvADkjJl5DE" target="_blank" style="color:var(--dorado-tesla);">[ VER ESTUDIO ]</a>
+        <div class="paradigma-fila"><div><h4>Biofísica</h4></div></div>
+        <div class="paradigma-fila"><div><h4>Paradigma Universo Eléctrico</h4></div></div>
+        <div class="paradigma-fila"><div><h4>Paradigma del Tiempo</h4></div></div>
+        <div class="paradigma-fila"><div><h4>Paradigma de la Biología - SISTEMA BIOELECTRICO</h4></div></div>
+        
+        <div class="card-box" style="padding: 20px;">
+            <h3 style="color:var(--dorado-tesla);">Música Consciente & Creatividad</h3>
+            <p style="font-size: 0.85rem;">Estudio de campo: Laguna Pai - La Ruta Natural (#ElCaminoEsLargo)</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/YvADkjJl5DE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <section id="vivero" class="seccion-ventana">
-        <h2 style="color:var(--dorado-tesla); text-transform:uppercase; text-align:center;">Vivero en Línea</h2>
-        <p style="text-align:center;">Alta/Baja Radiación y Árboles (Plantación Gratis para Planes).</p>
+    <section id="redes" class="seccion-ventana">
+        <h2 style="color:var(--dorado-tesla); text-transform:uppercase; text-align:center; margin-bottom:40px;">Comunidad Facebook</h2>
+        <div style="display: flex; justify-content: center; background: #fff; padding: 10px; border-radius: 8px;">
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Forganico.sustentable.1&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
     </section>
 
 </div>
