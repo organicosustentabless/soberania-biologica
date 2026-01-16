@@ -1,4 +1,25 @@
 index.html
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organico Sustentable | Protector de Frecuencias & Espacios Vivos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --verde-profundo: #1b3d18;
+            --verde-organico: #2e5a27;
+            --verde-kalcker: #00a896;
+            --dorado-tesla: #b8860b;
+            --rojo-alerta: #b22222;
+            --fondo: #f4f7f2;
+            --blanco: #ffffff;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--fondo); color: #333; scroll-behavior: smooth; }
+    …
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -86,6 +107,102 @@ index.html
 <a href="https://wa.me/56966911115" class="boton-whatsapp" target="_blank">
     <i class="fab fa-whatsapp" style="font-size: 30px;"></i>
 </a>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orgánico y Sustentable | Soberanía e Ingeniería</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --verde-claro: #8eb057;
+            --verde-oscuro: #2e5a27;
+            --dorado-tesla: #b8860b;
+            --fondo: #0a0a0a;
+            --blanco: #ffffff;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--fondo); color: #e0e0e0; line-height: 1.6; }
+        
+        /* HEADER IDENTIDAD */
+        header { text-align: center; padding: 50px 20px; background: var(--blanco); color: var(--verde-oscuro); border-bottom: 4px solid var(--dorado-tesla); }
+        header h1 { margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+        /* GALERÍA BOTÁNICA */
+        .seccion-galeria { margin-top: 40px; }
+        .categoria-titulo { color: var(--verde-claro); border-left: 5px solid var(--verde-claro); padding-left: 15px; margin: 30px 0 15px; text-transform: uppercase; }
+        
+        .grid-plantas { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .planta-card { background: #1a1a1a; border-radius: 10px; overflow: hidden; border: 1px solid #333; transition: 0.3s; }
+        .planta-card:hover { transform: translateY(-5px); border-color: var(--dorado-tesla); }
+        .planta-img { width: 100%; height: 200px; background: #222; display: flex; align-items: center; justify-content: center; color: #555; }
+        .planta-info { padding: 15px; text-align: center; }
+
+        /* BIBLIOTECA PDF */
+        .bloque-soberania { background: #121212; border: 2px solid var(--dorado-tesla); padding: 30px; border-radius: 15px; margin: 40px 0; text-align: center; }
+        .btn-descarga { background: var(--dorado-tesla); color: #000; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin: 10px; }
+
+        footer { text-align: center; padding: 40px; background: #000; border-top: 2px solid var(--verde-oscuro); }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Orgánico y Sustentable</h1>
+    <p>Entidad Orgánica y Sustentable | Protector de Frecuencias & Espacios Vivos</p>
+</header>
+
+<div class="container">
+
+    <section class="bloque-soberania">
+        <h2>Soberanía Biotecnológica: Reactores Tesla 3-6-9</h2>
+        <p>Investigación y desarrollo de mini reactores en envases de 1L. Potenciados con Diatomea.</p>
+        <div style="margin-top:20px;">
+            <a href="biblioteca/PROTOCOLO_TESLA.pdf" class="btn-descarga"><i class="fas fa-file-pdf"></i> Protocolo Tesla</a>
+            <a href="biblioteca/DIATOMEA_GUIA.pdf" class="btn-descarga"><i class="fas fa-file-pdf"></i> Aporte Diatomea</a>
+        </div>
+    </section>
+
+    <section class="seccion-galeria">
+        <h2 style="text-align: center; color: var(--dorado-tesla);">Catálogo de Espacios Vivos</h2>
+
+        <h3 class="categoria-titulo">Plantas de Sol Directo</h3>
+        <div class="grid-plantas">
+            <div class="planta-card">
+                <div class="planta-img">Subir imagen a galeria/sol1.jpg</div>
+                <div class="planta-info"><h4>Especie Sol 1</h4><p>Resistencia Alta</p></div>
+            </div>
+        </div>
+
+        <h3 class="categoria-titulo">Plantas de Semisombra</h3>
+        <div class="grid-plantas">
+            <div class="planta-card">
+                <div class="planta-img">Subir imagen a galeria/semi1.jpg</div>
+                <div class="planta-info"><h4>Especie Semisombra 1</h4><p>Luz Filtrada</p></div>
+            </div>
+        </div>
+
+        <h3 class="categoria-titulo">Plantas de Sombra</h3>
+        <div class="grid-plantas">
+            <div class="planta-card">
+                <div class="planta-img">Subir imagen a galeria/sombra1.jpg</div>
+                <div class="planta-info"><h4>Especie Sombra 1</h4><p>Interior / Bosque</p></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 Orgánico y Sustentable</p>
+    <p style="font-size: 0.8rem; color: #555;">Protector de Frecuencias & Espacios Vivos</p>
+</footer>
 
 </body>
 </html>
