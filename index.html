@@ -4,12 +4,12 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orgánico y Sustentable | Catálogo de Ingeniería & Ventas</title>
+    <title>Orgánico y Sustentable | Ingeniería de Espacios Vivos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --dorado-tesla: #b8860b;
-            --verde-vida: #2e7d32;
+            --verde-ejecucion: #2e7d32;
             --negro: #0a0a0a;
             --gris-card: #1a1a1a;
             --blanco: #ffffff;
@@ -24,28 +24,45 @@ index.html
 
         .titulo-seccion { text-align: center; color: var(--dorado-tesla); text-transform: uppercase; margin: 50px 0 30px; letter-spacing: 2px; border-bottom: 1px solid #333; padding-bottom: 10px; }
 
+        /* SERVICIO DE CONTROL DE DESEQUILIBRIOS */
+        .servicio-especial { 
+            background: linear-gradient(145deg, #1b3d18, #0a0a0a); 
+            padding: 40px; 
+            border-radius: 20px; 
+            border: 2px solid var(--dorado-tesla);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .servicio-especial i { font-size: 3rem; color: var(--dorado-tesla); margin-bottom: 20px; }
+
+        /* PROTOCOLO VISITA 1 UF */
+        .protocolo-box { background: #111; padding: 30px; border-radius: 20px; border: 1px solid #333; margin-bottom: 50px; }
+        .protocolo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .paso { text-align: center; padding: 15px; }
+
+        /* GRID CATALOGO */
         .grid-catalogo { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        
-        .card-ingenieria { background: var(--gris-card); border-radius: 15px; border: 1px solid #333; overflow: hidden; transition: 0.3s; text-align: center; }
-        .card-ingenieria:hover { border-color: var(--verde-vida); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3); }
-        
-        /* Contenedor para tus fotos del vivero */
-        .img-vivero { height: 220px; background: #222; overflow: hidden; position: relative; }
-        .img-vivero img { width: 100%; height: 100%; object-fit: cover; }
-        .placeholder-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #444; font-weight: bold; }
+        .card-ingenieria { background: var(--gris-card); border-radius: 15px; border: 1px solid #333; overflow: hidden; transition: 0.3s; text-align: center; padding-bottom: 20px; }
+        .card-ingenieria:hover { border-color: var(--verde-ejecucion); transform: translateY(-5px); }
+        .img-vivero { height: 180px; background: #222; display: flex; align-items: center; justify-content: center; color: #444; }
 
-        .info { padding: 20px; }
-        .info h4 { margin: 0 0 10px; color: var(--blanco); text-transform: uppercase; }
-        .tag-insumo { background: var(--dorado-tesla); color: black; font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; font-weight: bold; margin-bottom: 10px; display: inline-block; }
-
-        /* REDES SOCIALES */
-        .social-box { text-align: center; padding: 40px; background: #111; border-radius: 20px; margin-top: 60px; border: 1px solid #333; }
-        .social-box a { color: white; font-size: 3.5rem; margin: 0 30px; transition: 0.3s; display: inline-block; }
+        /* REDES SOCIALES ELEGANTES */
+        .social-box { text-align: center; padding: 40px; margin-top: 60px; }
+        .social-box a { color: var(--blanco); font-size: 4rem; margin: 0 30px; transition: 0.3s; }
         .social-box a:hover { color: var(--dorado-tesla); transform: scale(1.1); }
 
-        .btn-float-ws { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 10000; text-decoration: none; }
-        
-        footer { text-align: center; padding: 40px; color: #555; }
+        /* BOTÓN WHATSAPP FLOTANTE ELEGANTE */
+        .btn-ws-float { 
+            position: fixed; bottom: 30px; right: 30px; 
+            background-color: #25d366; color: white; 
+            width: 70px; height: 70px; border-radius: 50px; 
+            display: flex; align-items: center; justify-content: center; 
+            font-size: 38px; box-shadow: 0 6px 20px rgba(0,0,0,0.6); 
+            z-index: 9999; text-decoration: none; transition: 0.3s;
+        }
+        .btn-ws-float:hover { transform: scale(1.1); background-color: #128c7e; }
+
+        footer { text-align: center; padding: 40px; color: #555; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
@@ -57,59 +74,57 @@ index.html
 
 <div class="container">
 
-    <h2 class="titulo-seccion"><i class="fas fa-boxes"></i> Catálogo de Insumos & Súper Sustratos</h2>
+    <section class="servicio-especial">
+        <i class="fas fa-shield-virus"></i>
+        <h2>Servicio de Control de Desequilibrios</h2>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+            Aplicación Foliar-Radicular avanzada para especies en desequilibrio o presencia de plagas. 
+            Utilizamos <strong>SiO2 (Diatomea)</strong> para restablecer la salud biológica: <strong>Controla y Nutre</strong> simultáneamente.
+        </p>
+        <a href="https://wa.me/56966911115?text=Deseo%20contratar%20el%20Servicio%20de%20Control%20de%20Desequilibrios" 
+           style="display:inline-block; margin-top:20px; padding:15px 30px; background:var(--dorado-tesla); color:black; font-weight:bold; border-radius:8px; text-decoration:none;">
+           SOLICITAR INTERVENCIÓN
+        </a>
+    </section>
+
+    <section class="protocolo-box">
+        <h2 style="text-align: center; color: var(--dorado-tesla);">Protocolo de Diseño (1 UF)</h2>
+        <div class="protocolo-grid">
+            <div class="paso">
+                <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: var(--verde-ejecucion);"></i>
+                <h4>Visita Técnica</h4>
+                <p>Evaluación de radiación y terreno.</p>
+            </div>
+            <div class="paso">
+                <i class="fas fa-laptop-code" style="font-size: 2rem; color: var(--verde-ejecucion);"></i>
+                <h4>Fotomontaje</h4>
+                <p>Diseño digital junto a Gemini.</p>
+            </div>
+            <div class="paso">
+                <i class="fas fa-file-pdf" style="font-size: 2rem; color: var(--verde-ejecucion);"></i>
+                <h4>Entregable</h4>
+                <p>PDF con 3 propuestas de ingeniería.</p>
+            </div>
+        </div>
+    </section>
+
+    <h2 class="titulo-seccion">Catálogo de Servicios e Insumos</h2>
     <div class="grid-catalogo">
-        
         <div class="card-ingenieria">
-            <div class="img-vivero">
-                <span class="placeholder-text">Subir foto de Tierra de Hoja</span>
-                </div>
-            <div class="info">
-                <span class="tag-insumo">BASE ORGÁNICA</span>
-                <h4>Tierra de Hoja Seleccionada</h4>
-                <p>Base forestal de alta calidad, tamizada y lista para potenciar con ingeniería biológica.</p>
-                <a href="https://wa.me/56966911115?text=Deseo%20información%20sobre%20la%20Tierra%20de%20Hoja" class="btn-cotizar" style="color:var(--verde-vida); font-weight:bold; text-decoration:none;">CONSULTAR STOCK</a>
-            </div>
+            <div class="img-vivero">FOTO TIERRA DE HOJA</div>
+            <div class="info"><h4>Tierra de Hoja</h4><p>Base Forestal Seleccionada</p></div>
         </div>
-
         <div class="card-ingenieria">
-            <div class="img-vivero">
-                <span class="placeholder-text">Subir foto de Mezcla Completa</span>
-            </div>
-            <div class="info">
-                <span class="tag-insumo">INGENIERÍA</span>
-                <h4>Sustrato Bio-Energético</h4>
-                <p>Combinación maestra: <strong>L-Arginina + Diatomea + Humus</strong> sobre base orgánica.</p>
-            </div>
+            <div class="img-vivero">FOTO SÚPER SUSTRATO</div>
+            <div class="info"><h4>Súper Sustrato</h4><p>L-Arginina + Diatomea + Humus</p></div>
         </div>
-
         <div class="card-ingenieria">
-            <div class="img-vivero">
-                <span class="placeholder-text">Subir foto L-Arginina/Diatomea</span>
-            </div>
-            <div class="info">
-                <span class="tag-insumo">POTENCIADOR</span>
-                <h4>Activador Radicular</h4>
-                <p>Concentrado de <strong>L-Arginina + Diatomeas</strong> para recuperación de suelos agotados.</p>
-            </div>
-        </div>
-
-    </div>
-
-    <h2 class="titulo-seccion"><i class="fas fa-seedling"></i> Catálogo Ingeniería Botánica</h2>
-    
-    <div style="margin-bottom: 40px;">
-        <h3 style="color: #ff9800; border-left: 5px solid #ff9800; padding-left: 15px;"><i class="fas fa-sun"></i> Alta Radiación Solar</h3>
-        <div class="grid-catalogo">
-            <div class="card-ingenieria">
-                <div class="img-vivero"><span class="placeholder-text">Foto Planta Sol 1</span></div>
-                <div class="info"><h4>Especie Sol Técnico</h4></div>
-            </div>
+            <div class="img-vivero">FOTO SiO2</div>
+            <div class="info"><h4>Insumo SiO2</h4><p>Control y Nutrición Foliar</p></div>
         </div>
     </div>
 
     <section class="social-box">
-        <h3>Sintoniza con nuestra Frecuencia</h3>
         <a href="https://www.facebook.com/organico.sustentable.1" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://wa.me/56966911115" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </section>
@@ -117,10 +132,10 @@ index.html
 </div>
 
 <footer>
-    <p>Orgánico y Sustentable © 2026</p>
+    <p>Orgánico y Sustentable © 2026 | Cáceres Protector de Frecuencias</p>
 </footer>
 
-<a href="https://wa.me/56966911115" class="btn-float-ws" target="_blank">
+<a href="https://wa.me/56966911115" class="btn-ws-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 
