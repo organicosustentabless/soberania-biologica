@@ -12,6 +12,7 @@ index.html
             --negro-fondo: #0a0a0a;
             --gris-box: #151515;
             --blanco-puro: #ffffff;
+            --verde-vida: #2e7d32;
         }
 
         body { 
@@ -39,6 +40,9 @@ index.html
             padding: 10px; 
             text-align: center; 
             border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav button {
             background: transparent;
@@ -70,24 +74,29 @@ index.html
             border-radius: 4px; 
             overflow: hidden;
             transition: 0.3s;
+            position: relative;
         }
-        .box:hover { border-color: var(--dorado-tesla); }
+        .box:hover { border-color: var(--dorado-tesla); box-shadow: 0 0 15px rgba(184, 134, 11, 0.2); }
 
         .box-img { 
             width: 100%; 
             height: 180px; 
             background: #111; 
             display: flex; 
+            flex-direction: column;
             align-items: center; 
             justify-content: center; 
-            color: #333;
+            color: #444;
             border-bottom: 1px solid #222;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 10px;
         }
 
         .box-content { padding: 25px; }
         .box-content h3 { color: var(--dorado-tesla); text-transform: uppercase; font-size: 0.95rem; margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; }
         
-        .glosa-pago { color: #2e7d32; font-size: 0.7rem; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; }
+        .glosa-pago { color: var(--verde-vida); font-size: 0.7rem; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; }
 
         /* PLAYLIST & BIBLIOTECA */
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; background: #000; margin-top: 15px; border: 1px solid #333; }
@@ -98,9 +107,17 @@ index.html
         .pdf-list a { color: var(--dorado-tesla); text-decoration: none; }
         .pdf-list a:hover { text-decoration: underline; }
 
+        /* CONTADOR DE IMPACTO */
+        .impact-bar { background: #000; padding: 20px; border: 1px solid var(--dorado-tesla); margin-bottom: 40px; display: flex; justify-content: space-around; text-align: center; }
+        .impact-item span { display: block; color: var(--dorado-tesla); font-size: 1.5rem; font-weight: bold; }
+        .impact-item label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+
         .btn-ws { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; z-index: 999; }
         
         footer { text-align: center; padding: 60px; font-size: 0.75rem; color: #444; border-top: 1px solid #111; }
+
+        /* REPRODUCTOR DE FRECUENCIAS */
+        .audio-player { position: fixed; bottom: 30px; left: 30px; background: rgba(0,0,0,0.8); padding: 10px; border: 1px solid var(--dorado-tesla); border-radius: 5px; font-size: 0.7rem; color: var(--dorado-tesla); z-index: 999; }
     </style>
 </head>
 <body>
@@ -108,48 +125,48 @@ index.html
 <header>
     <div class="brand">
         <h1>Orgánico y Sustentable</h1>
-        <h2>Organico Sustentable Protector de Frecuencias & Espacios Vivos</h2>
+        <h2>Cáceres Protector de Frecuencias & Espacios Vivos</h2>
     </div>
 </header>
 
 <nav>
     <button onclick="openTab('servicios')">Insumos y Servicios</button>
     <button onclick="openTab('vivero')">Vivero en Línea</button>
+    <button onclick="openTab('inventos')">El Taller de Tesla (Reactores)</button>
     <button onclick="openTab('investigacion')">Investigación y Paradigmas</button>
     <button onclick="openTab('comunidad')">Comunidad</button>
 </nav>
 
 <div class="container">
 
+    <div class="impact-bar">
+        <div class="impact-item"><span>369 m²</span><label>Espacios Protegidos</label></div>
+        <div class="impact-item"><span>100%</span><label>Orgánico & Sustentable</label></div>
+        <div class="impact-item"><span>SiO2</span><label>Nutrición Celular</label></div>
+    </div>
+
     <div id="servicios" class="window active">
         <div class="grid">
             <div class="box">
-                <div class="box-img">[IMAGEN MANTENIMIENTO]</div>
+                <div class="box-img"><i class="fas fa-seedling" style="font-size: 3rem;"></i><br>MANTENIMIENTO</div>
                 <div class="box-content">
                     <div class="glosa-pago">Convenio Pago Mensual</div>
                     <h3>Mantenimiento Integral</h3>
-                    <p style="font-size: 0.85rem;">Mullido, Aireado, Podas fitosanitarias e Informe de Salud Vegetal.</p>
+                    <p style="font-size: 0.85rem;">Mullido, Aireado, Podas fitosanitarias e Informe de Salud Vegetal bajo parámetros biofísicos.</p>
                 </div>
             </div>
             <div class="box">
-                <div class="box-img">[IMAGEN ESCUDOS]</div>
+                <div class="box-img"><i class="fas fa-shield-virus" style="font-size: 3rem;"></i><br>ESCUDOS ELECTROMAGNÉTICOS</div>
                 <div class="box-content">
-                    <h3>Diseño de Espacios-Escudos Vegetales</h3>
-                    <p style="font-size: 0.85rem;">Saturación Electromagnética (1V/m). Fotomontaje + 3 Propuestas Técnicas.</p>
+                    <h3>Escudos Vegetales</h3>
+                    <p style="font-size: 0.85rem;">Mitigación de saturación electromagnética (1V/m) mediante diseño botánico estratégico.</p>
                 </div>
             </div>
             <div class="box">
-                <div class="box-img">[IMAGEN HÍDRICO]</div>
-                <div class="box-content">
-                    <h3>Sistemas de Control Hídrico</h3>
-                    <p style="font-size: 0.85rem;">Análisis de Campo, Factores Técnicos, Planimetría y Presupuesto de Ejecución.</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-img">[IMAGEN CONTROL]</div>
+                <div class="box-img"><i class="fas fa-microscope" style="font-size: 3rem;"></i><br>CONTROL BIOLÓGICO</div>
                 <div class="box-content">
                     <h3>Control de Desequilibrios</h3>
-                    <p style="font-size: 0.85rem;">Aplicación SiO2, Control de Plagas y Nutrición Celular Radicular.</p>
+                    <p style="font-size: 0.85rem;">Aplicación técnica de Diatomea (SiO2). Control de plagas sin químicos, protegiendo la vida celular.</p>
                 </div>
             </div>
         </div>
@@ -158,18 +175,41 @@ index.html
     <div id="vivero" class="window">
         <div class="grid">
             <div class="box">
-                <div class="box-img">[IMAGEN ALTA RADIACIÓN]</div>
-                <div class="box-content"><h3>Alta Radiación Solar</h3></div>
+                <div class="box-img"><i class="fas fa-sun" style="font-size: 3rem;"></i></div>
+                <div class="box-content">
+                    <h3>Alta Radiación Solar</h3>
+                    <p style="font-size: 0.75rem;">Especies adaptadas para máxima protección UV.</p>
+                </div>
             </div>
             <div class="box">
-                <div class="box-img">[IMAGEN BAJA RADIACIÓN]</div>
-                <div class="box-content"><h3>Baja Radiación Solar</h3></div>
+                <div class="box-img"><i class="fas fa-cloud-sun" style="font-size: 3rem;"></i></div>
+                <div class="box-content">
+                    <h3>Baja Radiación Solar</h3>
+                    <p style="font-size: 0.75rem;">Plantas de interior y sombra optimizadas bioeléctricamente.</p>
+                </div>
             </div>
             <div class="box">
-                <div class="box-img">[IMAGEN ÁRBOLES]</div>
+                <div class="box-img"><i class="fas fa-tree" style="font-size: 3rem;"></i></div>
                 <div class="box-content">
                     <h3>Catálogo de Árboles</h3>
-                    <p style="color: #2e7d32; font-size:0.75rem; font-weight:bold;">Plantación Gratis para Convenios</p>
+                    <p style="color: var(--verde-vida); font-size:0.75rem; font-weight:bold;">Plantación Gratis para Convenios</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="inventos" class="window">
+        <div class="box" style="margin-bottom: 30px;">
+            <div class="box-content">
+                <h3 style="color: var(--dorado-tesla); border-bottom: 2px solid var(--dorado-tesla);">Principio 3, 6, 9: Reactores de Vida</h3>
+                <p>Aplicando la matemática de Tesla a la agricultura sustentable, hemos desarrollado reactores compactos de 1 litro.</p>
+                <div class="grid">
+                    <div style="background: #111; padding: 15px; border-left: 3px solid var(--dorado-tesla);">
+                        <strong>Mini Reactor 1L:</strong> Potencia la oxigenación y la frecuencia del agua de riego, logrando un crecimiento celular acelerado y resistente.
+                    </div>
+                    <div style="background: #111; padding: 15px; border-left: 3px solid var(--dorado-tesla);">
+                        <strong>Propósito:</strong> Crear antenas biológicas más fuertes que resistan la intervención del "controlador" externo.
+                    </div>
                 </div>
             </div>
         </div>
@@ -179,9 +219,9 @@ index.html
         <div class="grid">
             <div class="box">
                 <div class="box-content">
-                    <h3>Biofísica</h3>
+                    <h3>Biofísica y SiO2</h3>
                     <ul class="pdf-list">
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> Estudio de Biofotónica.pdf</a></li>
+                        <li><a href="#"><i class="fas fa-file-pdf"></i> El rol de la Diatomea en la Nutrición Celular.pdf</a></li>
                         <li><a href="#"><i class="fas fa-file-pdf"></i> Análisis de Frecuencias Suelo.pdf</a></li>
                     </ul>
                 </div>
@@ -189,42 +229,37 @@ index.html
             <div class="box">
                 <div class="box-content">
                     <h3>Paradigma Universo Eléctrico</h3>
-                    <p style="font-size: 0.8rem;">Documentación en proceso de carga.</p>
+                    <p style="font-size: 0.8rem;">Entendiendo la planta como una antena dentro de un circuito eléctrico global.</p>
                 </div>
             </div>
             <div class="box">
                 <div class="box-content">
-                    <h3>Sistema Bioeléctrico</h3>
-                    <div style="text-align:center; padding: 20px;"><i class="fas fa-male" style="font-size: 3rem; color: var(--dorado-tesla);"></i></div>
-                    <ul class="pdf-list">
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> Antenas Biológicas.pdf</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="box" style="margin-top: 30px;">
-            <div class="box-content">
-                <h3>Música Consciente & Creatividad (8 Capítulos)</h3>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_m5l6In0DTu6NSXLwy_Ye14syH-HI5rM9U" frameborder="0" allowfullscreen></iframe>
+                    <h3>Música Consciente</h3>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_m5l6In0DTu6NSXLwy_Ye14syH-HI5rM9U" frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div id="comunidad" class="window">
-        <div style="display: flex; justify-content: center; background: #fff; padding: 15px; border-radius: 4px;">
+        <div style="display: flex; flex-direction: column; align-items: center; background: #fff; padding: 15px; border-radius: 4px;">
+            <h3 style="color: #000;">Conexión en Red</h3>
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Forganico.sustentable.1&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
         </div>
     </div>
 
 </div>
 
+<div class="audio-player">
+    <i class="fas fa-wave-square"></i> Frecuencia 432Hz Activa
+</div>
+
 <a href="https://wa.me/56966911115" class="btn-ws" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <footer>
-    Orgánico y Sustentable © 2026 | Sembrando ConCiencia | Cáceres Protector de Frecuencias & Espacios Vivos
+    Orgánico y Sustentable ©️ 2026 | Sembrando ConCiencia | Cáceres Protector de Frecuencias & Espacios Vivos
 </footer>
 
 <script>
@@ -239,26 +274,3 @@ index.html
 
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orgánico y Sustentable | Sembrando ConCiencia</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --dorado-tesla: #b8860b;
-            --negro-fondo: #0a0a0a;
-            --gris-box: #151515;
-            --blanco-puro: #ffffff;
-            --verde-vida: #2e7d32;
-        }
-
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; background-color: var(--negro-fondo); color: #ccc; overflow-x: hidden;
-        }
-
-        /* HEADER E IDENTIDAD */
-       …
