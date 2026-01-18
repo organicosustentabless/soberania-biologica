@@ -7,6 +7,7 @@ index.html
     <title>Orgánico y Sustentable | Sembrando ConCiencia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* PROTOCOLO DE ESTILOS - ARQUITECTURA DE ALTA FRECUENCIA */
         :root {
             --dorado-tesla: #b8860b;
             --negro-fondo: #0a0a0a;
@@ -14,7 +15,7 @@ index.html
             --blanco-puro: #ffffff;
             --verde-vida: #2e7d32;
             --oro-resplandor: rgba(184, 134, 11, 0.4);
-            --shadow-power: 0 10px 40px rgba(0,0,0,0.8);
+            --shadow-power: 0 25px 60px rgba(0,0,0,1);
         }
 
         body { 
@@ -22,159 +23,383 @@ index.html
             margin: 0; 
             background-color: var(--negro-fondo); 
             color: #ccc; 
-            line-height: 1.7;
+            line-height: 1.8; 
             overflow-x: hidden;
         }
 
-        /* HEADER IDENTITARIO - ARQUITECTURA MAXI */
+        /* HEADER IDENTITARIO - PROTECTOR DE FRECUENCIAS */
         header { 
             background: var(--blanco-puro); 
-            padding: 35px 60px; 
-            border-bottom: 7px solid var(--dorado-tesla);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
+            padding: 50px 70px; 
+            border-bottom: 9px solid var(--dorado-tesla);
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: relative; 
             z-index: 1001;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
         }
-        .brand h1 { color: #1b3d18; margin: 0; text-transform: uppercase; font-size: 2.2rem; letter-spacing: 4px; font-weight: 900; }
-        .brand h2 { color: var(--dorado-tesla); margin: 0; font-size: 1.1rem; font-weight: 400; letter-spacing: 1px; }
+
+        .brand h1 { 
+            color: #1b3d18; 
+            margin: 0; 
+            text-transform: uppercase; 
+            font-size: 2.5rem; 
+            letter-spacing: 6px; 
+            font-weight: 900; 
+        }
+
+        .brand h2 { 
+            color: var(--dorado-tesla); 
+            margin: 0; 
+            font-size: 1.2rem; 
+            font-weight: 400; 
+            letter-spacing: 2px; 
+        }
         
-        .status-panel { text-align: right; }
         .status-badge { 
-            font-size: 0.8rem; color: #111; text-transform: uppercase; 
-            border: 2px solid var(--dorado-tesla); padding: 10px 20px; 
-            border-radius: 4px; font-weight: bold; letter-spacing: 2px;
+            font-size: 0.9rem; 
+            color: #111; 
+            text-transform: uppercase; 
+            border: 3px solid var(--dorado-tesla); 
+            padding: 15px 30px; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            letter-spacing: 3px;
+            background: rgba(184, 134, 11, 0.1);
+        }
+
+        /* NAVEGACIÓN TÉCNICA Y PERSISTENTE */
+        nav { 
+            background: #000; 
+            padding: 25px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid #222;
+        }
+
+        nav button {
+            background: transparent; 
+            border: none; 
+            color: #fff; 
+            padding: 18px 40px; 
+            text-transform: uppercase; 
+            font-weight: bold; 
+            font-size: 0.95rem; 
+            cursor: pointer; 
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        nav button:hover {
+            color: var(--dorado-tesla);
+            transform: translateY(-2px);
+        }
+
+        nav button.active-nav { 
+            color: var(--dorado-tesla); 
+        }
+
+        nav button.active-nav::after {
+            content: ''; 
+            position: absolute; 
+            bottom: 0; 
+            left: 20%; 
+            width: 60%; 
+            height: 4px; 
+            background: var(--dorado-tesla);
+            box-shadow: 0 0 10px var(--dorado-tesla);
+        }
+
+        .container { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 100px 30px; 
+        }
+        
+        /* BANNER SEMBRANDO CONCIENCIA - PROTOCOLO VISUAL */
+        .impact-banner { 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            gap: 25px;
+            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%); 
+            padding: 80px; 
+            border: 2px solid var(--dorado-tesla); 
+            margin-bottom: 100px; 
+            box-shadow: inset 0 0 80px rgba(184, 134, 11, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .impact-banner i { 
+            font-size: 6rem; 
+            color: var(--dorado-tesla); 
+            filter: drop-shadow(0 0 25px var(--oro-resplandor));
+            animation: pulse-micro 4s infinite ease-in-out;
+        }
+
+        .impact-banner span { 
+            font-size: 3.8rem; 
+            font-weight: 900; 
+            color: var(--dorado-tesla); 
+            text-transform: uppercase; 
+            letter-spacing: 18px; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        @keyframes pulse-micro {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        /* DINÁMICA DE VENTANAS */
+        .window { 
+            display: none; 
+            animation: slideUpLarge 0.9s cubic-bezier(0.23, 1, 0.32, 1); 
+        }
+
+        .window.active { 
+            display: block; 
+        }
+
+        @keyframes slideUpLarge { 
+            from { opacity: 0; transform: translateY(80px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        /* GRID DE SERVICIOS Y PRODUCTOS */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(430px, 1fr)); 
+            gap: 60px; 
+        }
+        
+        /* ESTILO DE CAJAS (BOXES) */
+        .box { 
+            background: var(--gris-box); 
+            border: 1px solid #282828; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            transition: 0.6s all; 
+            position: relative; 
+            display: flex; 
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .box:hover { 
+            border-color: var(--dorado-tesla); 
+            box-shadow: var(--shadow-power); 
+            transform: translateY(-20px); 
+        }
+
+        .box-header { 
+            background: #111; 
+            padding: 35px; 
+            border-bottom: 1px solid #222; 
+            text-align: center;
+        }
+
+        .box-header h3 { 
+            color: var(--dorado-tesla); 
+            margin: 0; 
+            font-size: 1.4rem; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+        }
+        
+        .box-content { 
+            padding: 60px 50px; 
+            flex-grow: 1; 
+            text-align: center;
+        }
+
+        /* ICONOGRAFÍA GIGANTE MEJORADA */
+        .box-content i.big-icon { 
+            font-size: 7.5rem; 
+            color: var(--dorado-tesla); 
+            margin-bottom: 45px; 
+            display: block; 
+            filter: drop-shadow(0 15px 20px rgba(0,0,0,0.9));
+            transition: 0.5s ease;
+        }
+
+        .box:hover i.big-icon {
+            transform: scale(1.15) rotate(5deg);
+            color: var(--blanco-puro);
+        }
+
+        .box-content p { 
+            font-size: 1.15rem; 
+            color: #b0b0b0; 
+            margin-bottom: 45px; 
+            line-height: 2; 
+            font-weight: 300;
+        }
+
+        /* BOTONES WHATSAPP DE ALTO IMPACTO */
+        .btn-wa-action {
+            background: var(--verde-vida); 
+            color: #fff; 
+            text-decoration: none; 
+            display: block; 
+            text-align: center; 
+            padding: 28px; 
+            border-radius: 6px; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            transition: 0.5s; 
+            font-size: 1.1rem; 
+            letter-spacing: 2px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn-wa-action:hover { 
+            background: #1b5e20; 
+            box-shadow: 0 15px 40px rgba(46,125,50,0.5); 
+            letter-spacing: 4px;
+        }
+
+        /* CAPAS DE PROTECCIÓN Y BLOQUEO */
+        .shield-system {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(5,5,5,0.99); 
+            z-index: 100; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            backdrop-filter: blur(30px); 
+            color: var(--dorado-tesla); 
+            padding: 60px;
+            text-align: center;
+        }
+
+        .shield-system i { 
+            font-size: 6rem; 
+            margin-bottom: 40px; 
+            animation: shield-flicker 2s infinite;
+        }
+
+        @keyframes shield-flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .is-locked { 
+            filter: blur(50px); 
+            pointer-events: none; 
+            user-select: none;
+        }
+
+        /* PORTAL DE MEMBRESÍA - ESTILO RED DE CONCIENCIA */
+        .auth-container {
+            max-width: 700px; 
+            margin: 60px auto; 
+            background: #080808; 
+            padding: 100px; 
+            border: 2px solid var(--dorado-tesla); 
+            text-align: center; 
+            box-shadow: 0 0 100px rgba(0,0,0,1);
+            border-radius: 10px;
+        }
+
+        .auth-container input {
+            width: 100%; 
+            padding: 30px; 
+            margin: 50px 0; 
+            background: #000; 
+            border: 1px solid #333; 
+            color: var(--dorado-tesla); 
+            text-align: center; 
+            font-size: 2.5rem; 
+            letter-spacing: 20px; 
+            font-family: 'Courier New', monospace;
+            outline: none;
+        }
+
+        .btn-sync {
+            background: var(--dorado-tesla); 
+            color: #000; 
+            border: none; 
+            padding: 30px; 
+            width: 100%; 
+            font-weight: 900; 
+            cursor: pointer; 
+            font-size: 1.3rem; 
+            letter-spacing: 5px;
+            text-transform: uppercase;
             transition: 0.5s;
         }
 
-        /* NAVEGACIÓN TÉCNICA */
-        nav { 
-            background: #000; padding: 18px; text-align: center; 
-            position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222;
+        .btn-sync:hover {
+            background: #fff;
+            transform: scale(1.02);
         }
-        nav button {
-            background: transparent; border: 1px solid transparent; color: #fff;
-            padding: 15px 30px; text-transform: uppercase; font-weight: bold;
-            font-size: 0.85rem; cursor: pointer; transition: 0.4s;
-            letter-spacing: 1.5px;
+
+        /* WHATSAPP FLOTANTE MASTER */
+        .ws-float-master {
+            position: fixed; 
+            bottom: 50px; 
+            right: 50px; 
+            background: #25d366; 
+            color: white; 
+            width: 95px; 
+            height: 95px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 55px; 
+            z-index: 2000; 
+            box-shadow: 0 25px 55px rgba(0,0,0,0.9); 
+            transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            text-decoration: none;
         }
-        nav button:hover { color: var(--dorado-tesla); text-shadow: 0 0 12px var(--oro-resplandor); }
-        nav button.active-nav { color: var(--dorado-tesla); border-bottom: 3px solid var(--dorado-tesla); }
 
-        .container { max-width: 1400px; margin: 0 auto; padding: 60px 25px; }
-        
-        /* IMPACTO 3-6-9 EXPANDIDO */
-        .impact-bar { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px; background: #000; padding: 50px; 
-            border: 1px solid var(--dorado-tesla); margin-bottom: 70px;
-            box-shadow: inset 0 0 30px rgba(184, 134, 11, 0.15);
+        .ws-float-master:hover { 
+            transform: scale(1.2) rotate(15deg); 
         }
-        .impact-item { text-align: center; border-right: 1px solid #222; }
-        .impact-item:last-child { border-right: none; }
-        .impact-item span { display: block; color: var(--dorado-tesla); font-size: 2.5rem; font-weight: bold; font-family: 'Courier New', monospace; }
-        .impact-item label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #555; }
 
-        /* VENTANAS Y TRANSICIONES */
-        .window { display: none; animation: slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
-        .window.active { display: block; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* GRID Y CAJAS DE ALTA FRECUENCIA */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
-        
-        .box { 
-            background: var(--gris-box); border: 1px solid #222; border-radius: 5px; 
-            overflow: hidden; transition: 0.5s; position: relative;
-        }
-        .box:hover { border-color: var(--dorado-tesla); box-shadow: var(--shadow-power); transform: translateY(-10px); }
-
-        .box-header { 
-            background: #111; padding: 25px 35px; border-bottom: 1px solid #222; 
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .box-header h3 { color: var(--dorado-tesla); margin: 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; }
-        
-        .box-content { padding: 40px; }
-        .box-content p { font-size: 1rem; color: #999; margin-bottom: 25px; line-height: 1.8; }
-
-        /* VIVERO: BOTONES DE CONVERSIÓN WHATSAPP */
-        .btn-wa-vivero {
-            background: var(--verde-vida); color: #fff; text-decoration: none; 
-            display: block; text-align: center; padding: 20px; border-radius: 4px;
-            font-weight: bold; text-transform: uppercase; font-size: 1rem;
-            transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);
-        }
-        .btn-wa-vivero:hover { background: #1b5e20; box-shadow: 0 5px 20px rgba(46,125,50,0.5); transform: scale(1.03); }
-
-        /* SISTEMA DE ESCUDOS PROTEGIDOS */
-        .shield-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.98); z-index: 100; display: flex;
-            flex-direction: column; align-items: center; justify-content: center;
-            backdrop-filter: blur(15px); color: var(--dorado-tesla); text-align: center;
-            padding: 30px;
-        }
-        .shield-overlay i { font-size: 4rem; margin-bottom: 25px; animation: flicker 3s infinite; }
-        @keyframes flicker { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-        .is-locked { filter: blur(25px); pointer-events: none; }
-
-        /* PORTAL DE ACTIVACIÓN MAESTRO */
-        .auth-card {
-            max-width: 550px; margin: 50px auto; background: #080808;
-            padding: 70px; border: 2px solid var(--dorado-tesla); 
-            text-align: center; box-shadow: 0 0 60px rgba(184, 134, 11, 0.2);
-        }
-        .auth-card input {
-            width: 100%; padding: 20px; margin: 30px 0; background: #000;
-            border: 1px solid #333; color: var(--dorado-tesla); text-align: center;
-            font-size: 1.6rem; font-family: 'Courier New', monospace; letter-spacing: 8px;
-        }
-        .btn-unlock-red {
-            background: var(--dorado-tesla); color: #000; border: none;
-            padding: 20px 50px; font-weight: 900; text-transform: uppercase;
-            width: 100%; cursor: pointer; transition: 0.4s; letter-spacing: 3px;
-        }
-        .btn-unlock-red:hover { background: #fff; transform: translateY(-3px); }
-
-        /* BIBLIOTECA TÉCNICA EXPANDIDA */
-        .research-file {
-            display: flex; align-items: center; padding: 20px;
-            background: #111; margin-bottom: 15px; border-left: 5px solid var(--dorado-tesla);
-            text-decoration: none; color: #ddd; transition: 0.3s;
-        }
-        .research-file:hover { background: #1a1a1a; transform: translateX(10px); color: var(--dorado-tesla); }
-        .research-file i { margin-right: 20px; font-size: 1.4rem; }
-
-        /* SECCIÓN MULTIMEDIA */
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; margin-top: 25px; border: 1px solid #222; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-        /* WHATSAPP FLOTANTE - PROTOCOLO DIRECTO */
-        .ws-button {
-            position: fixed; bottom: 40px; right: 40px; background: #25d366;
-            color: white; width: 75px; height: 75px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 40px; text-decoration: none; z-index: 2000;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.7); transition: 0.5s;
-        }
-        .ws-button:hover { transform: scale(1.15) rotate(-10deg); }
-
+        /* FOOTER TÉCNICO */
         footer { 
-            text-align: center; padding: 150px 20px; color: #555; 
-            border-top: 1px solid #111; font-size: 0.9rem; 
-            letter-spacing: 4px; text-transform: uppercase;
+            text-align: center; 
+            padding: 200px 30px; 
+            color: #333; 
+            border-top: 1px solid #111; 
+            letter-spacing: 8px; 
+            text-transform: uppercase; 
+            font-size: 1.1rem;
             background: #000;
         }
-
-        /* DETALLES DE REACTORES - TÉCNICO */
-        .reactor-box {
-            background: #000; border: 1px dashed #444; padding: 25px;
-            font-family: 'Courier New', monospace; font-size: 0.9rem; margin-top: 20px;
+        
+        .tech-footer-detail {
+            margin-top: 20px;
+            color: #1b3d18;
+            font-weight: bold;
+            letter-spacing: 2px;
         }
-        .val { color: var(--dorado-tesla); font-weight: bold; }
+
+        /* TÉCNICO LABORAL */
+        .reactor-specs {
+            background: #050505;
+            padding: 40px;
+            border: 1px dashed #333;
+            text-align: left;
+            margin-top: 40px;
+            font-family: monospace;
+        }
+
+        .reactor-specs b { color: var(--dorado-tesla); }
     </style>
 </head>
 <body>
@@ -184,49 +409,48 @@ index.html
         <h1>Orgánico y Sustentable</h1>
         <h2>Cáceres Protector de Frecuencias & Espacios Vivos</h2>
     </div>
-    <div class="status-panel">
-        <div class="status-badge" id="mainStatus">NIVEL: PROTECCIÓN MÁXIMA</div>
-    </div>
+    <div class="status-badge" id="main-status">SISTEMA: ENCRIPTADO</div>
 </header>
 
-<nav id="navBar">
-    <button onclick="showTab('vivero')" id="t-vivero" class="active-nav">Vivero en Línea</button>
-    <button onclick="showTab('servicios')" id="t-servicios">Servicios Biofísicos</button>
-    <button onclick="showTab('laboratorio')" id="t-laboratorio">Laboratorio Tesla</button>
-    <button onclick="showTab('investigacion')" id="t-investigacion">Investigación Técnica</button>
-    <button onclick="showTab('membresia')" id="t-membresia" style="color:var(--dorado-tesla)">Red de Conciencia</button>
+<nav id="nav-system">
+    <button onclick="navTo('vivero')" id="btn-vivero" class="active-nav">Vivero en Línea</button>
+    <button onclick="navTo('servicios')" id="btn-servicios">Servicios Biofísicos</button>
+    <button onclick="navTo('laboratorio')" id="btn-laboratorio">Laboratorio Tesla</button>
+    <button onclick="navTo('investigacion')" id="btn-investigacion">Investigación Técnica</button>
+    <button onclick="navTo('membresia')" id="btn-membresia" style="color:var(--dorado-tesla)">Red de Conciencia</button>
 </nav>
 
 <div class="container">
 
-    <div class="impact-bar">
-        <div class="impact-item"><span>369 m²</span><label>Radio de Cobertura</label></div>
-        <div class="impact-item"><span>SiO2</span><label>Diatomea Certificada</label></div>
-        <div class="impact-item"><span>432Hz</span><label>Armonía de Riego</label></div>
-        <div class="impact-item"><span>3.6.9</span><label>Principio Activo</label></div>
+    <div class="impact-banner">
+        <i class="fas fa-microscope"></i>
+        <span>Sembrando ConCiencia</span>
     </div>
 
     <div id="vivero" class="window active">
         <div class="grid">
             <div class="box">
-                <div class="box-header"><h3>Plantas de Jardín y Vivero</h3><i class="fas fa-seedling"></i></div>
+                <div class="box-header"><h3>Plantas de Jardín</h3></div>
                 <div class="box-content">
-                    <p>Producción de especies ornamentales adaptadas y fortalecidas orgánicamente. Soluciones para interior y exterior.</p>
-                    <a href="https://wa.me/56966911115?text=Deseo%20información%20sobre%20Plantas%20de%20Vivero" class="btn-wa-vivero">Haz tu pedido aquí 👈</a>
+                    <i class="fas fa-seedling big-icon"></i>
+                    <p>Producción y cultivo de especies ornamentales seleccionadas por su capacidad de armonización biológica.</p>
+                    <a href="https://wa.me/56966911115?text=Deseo%20comprar%20Plantas%20de%20Jardín" class="btn-wa-action">Solicitar Catálogo 👈</a>
                 </div>
             </div>
             <div class="box">
-                <div class="box-header"><h3>Inventario Árboles Nativos</h3><i class="fas fa-tree"></i></div>
+                <div class="box-header"><h3>Árboles Nativos</h3></div>
                 <div class="box-content">
-                    <p>Reserva y reventa de ejemplares nativos para restauración ecológica y paisajismo de alta frecuencia.</p>
-                    <a href="https://wa.me/56966911115?text=Deseo%20información%20sobre%20Árboles%20Nativos" class="btn-wa-vivero">Haz tu pedido aquí 👈</a>
+                    <i class="fas fa-tree big-icon"></i>
+                    <p>Especialistas en la reventa de árboles nativos. Ejemplares aclimatados para asegurar la biodiversidad local.</p>
+                    <a href="https://wa.me/56966911115?text=Deseo%20consultar%20por%20Árboles%20Nativos" class="btn-wa-action">Consultar Stock 👈</a>
                 </div>
             </div>
             <div class="box">
-                <div class="box-header"><h3>Nutrición Mineral Diatomea</h3><i class="fas fa-vial"></i></div>
+                <div class="box-header"><h3>Nutrición Diatomea</h3></div>
                 <div class="box-content">
-                    <p>Suministro de Diatomea pura para control de plagas y nutrición radicular profunda. Fortalecimiento biológico.</p>
-                    <a href="https://wa.me/56966911115?text=Deseo%20pedir%20Insumos%20de%20Diatomea" class="btn-wa-vivero">Haz tu pedido aquí 👈</a>
+                    <i class="fas fa-gem big-icon"></i>
+                    <p>Insumos de Diatomea pura SiO2. Fortalecimiento estructural y protección contra desequilibrios patógenos.</p>
+                    <a href="https://wa.me/56966911115?text=Deseo%20pedir%20Insumos%20de%20Diatomea" class="btn-wa-action">Pedir Insumos 👈</a>
                 </div>
             </div>
         </div>
@@ -235,121 +459,124 @@ index.html
     <div id="servicios" class="window">
         <div class="grid">
             <div class="box">
-                <div class="box-header"><h3>Salud Vegetal Biofísica</h3><i class="fas fa-hand-holding-heart"></i></div>
+                <div class="box-header"><h3>Mantenimiento y Mullido</h3></div>
                 <div class="box-content">
-                    <p>Mantenimiento especializado: mullido, aireado y protocolos de salud vegetal bajo el estándar orgánico sustentable.</p>
-                    <a href="https://wa.me/56966911115?text=Consultar%20por%20Mantenimiento%20Biofísico" class="btn-wa-vivero">Solicitar Evaluación</a>
+                    <i class="fas fa-hand-holding-leaf big-icon"></i>
+                    <p>Protocolos de oxigenación radicular y mullido de sustratos para una absorción de nutrientes optimizada.</p>
+                    <a href="https://wa.me/56966911115?text=Solicito%20Mantenimiento%20Biofísico" class="btn-wa-action">Agendar Servicio</a>
                 </div>
             </div>
             <div class="box">
-                <div class="box-header"><h3>Blindaje de Espacios Vivos</h3><i class="fas fa-microchip"></i></div>
+                <div class="box-header"><h3>Control de Desequilibrios</h3></div>
                 <div class="box-content">
-                    <p>Consultoría en diseño de jardines que actúan como escudos naturales contra la contaminación electromagnética.</p>
-                    <a href="https://wa.me/56966911115?text=Consultar%20por%20Blindaje%20de%20Espacios" class="btn-wa-vivero">Información Técnica</a>
+                    <i class="fas fa-vial-circle-check big-icon"></i>
+                    <p>Identificación de carencias y fertilización orgánica de precisión para restaurar la salud vegetal.</p>
+                    <a href="https://wa.me/56966911115?text=Solicito%20Control%20de%20Desequilibrios" class="btn-wa-action">Agendar Servicio</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header"><h3>Riego Automatizado</h3></div>
+                <div class="box-content">
+                    <i class="fas fa-faucet-drip big-icon"></i>
+                    <p>Instalación técnica de sistemas de riego eficientes, garantizando la hidratación en ciclos biológicos precisos.</p>
+                    <a href="https://wa.me/56966911115?text=Solicito%20Diseño%20de%20Riego" class="btn-wa-action">Agendar Servicio</a>
                 </div>
             </div>
         </div>
     </div>
 
     <div id="laboratorio" class="window">
-        <div class="box" style="min-height: 450px; border: 2px dashed var(--dorado-tesla);">
-            <div class="shield-overlay" id="labShield">
+        <div class="box" style="min-height: 600px; border: 2px dashed var(--dorado-tesla);">
+            <div class="shield-system" id="lab-lock">
                 <i class="fas fa-atom"></i>
-                <h3>ACCESO RESTRINGIDO A LA RED</h3>
-                <p>Esta información técnica sobre reactores 3.6.9 es confidencial.</p>
+                <h3>ZONA DE REACTORES 1L</h3>
+                <p>Información técnica protegida por la Red de Conciencia.</p>
             </div>
-            <div class="box-content is-locked" id="labContent">
-                <h3>Reactores de Agua 1.0L</h3>
-                <p>Innovación técnica: Mini reactores para la re-estructuración molecular del agua de riego mediante vórtices resonantes.</p>
-                <div class="reactor-box">
-                    GEOMETRÍA: <span class="val">Vórtice Tesla</span><br>
-                    CAPACIDAD: <span class="val">1 Litro (Dinamización 3-6-9)</span><br>
-                    POTENCIA: <span class="val">Alta Frecuencia SiO2</span>
+            <div class="box-content is-locked" id="lab-data">
+                <h3>Implementación 3-6-9</h3>
+                <p>Configuración de mini reactores para la dinamización molecular del agua de riego.</p>
+                <div class="reactor-specs">
+                    - CAPACIDAD NOMINAL: <b>1.0 Litro</b><br>
+                    - PRINCIPIO ACTIVO: <b>Vórtice Tesla</b><br>
+                    - SINERGIA: <b>Diatomea + L-Arginina</b>
                 </div>
             </div>
         </div>
     </div>
 
     <div id="investigacion" class="window">
-        <div class="box" style="border-color: #333;">
-            <div class="shield-overlay" id="invShield">
+        <div class="box">
+            <div class="shield-system" id="inv-lock">
                 <i class="fas fa-fingerprint"></i>
-                <h3>AUTENTICACIÓN REQUERIDA</h3>
-                <p>Sincronice su frecuencia en la Red de Conciencia.</p>
+                <h3>BIBLIOTECA DE PARADIGMAS</h3>
+                <p>Acceso solo para miembros autorizados de la Red.</p>
             </div>
-            <div class="box-content is-locked" id="invContent">
-                <h3>Biblioteca de Paradigmas</h3>
-                <a href="#" class="research-file"><i class="fas fa-file-pdf"></i> Biofísica del Silicio y Diatomea.pdf</a>
-                <a href="#" class="research-file"><i class="fas fa-file-pdf"></i> Nikola Tesla: El Secreto del 3-6-9.pdf</a>
-                <a href="#" class="research-file"><i class="fas fa-file-pdf"></i> Energización Orgánica Sustentable.pdf</a>
-                
-                <h3 style="margin-top:40px;">Frecuencias de Sintonía</h3>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_m5l6In0DTu6NSXLwy_Ye14syH-HI5rM9U" frameborder="0" allowfullscreen></iframe>
-                </div>
+            <div class="box-content is-locked" id="inv-data">
+                <h3>Documentación SiO2</h3>
+                <p>Archivos profundos sobre la biofísica del silicio y protección de Espacios Vivos.</p>
             </div>
         </div>
     </div>
 
     <div id="membresia" class="window">
-        <div class="auth-card">
-            <i class="fas fa-user-shield" style="font-size: 3.5rem; color: var(--dorado-tesla);"></i>
+        <div class="auth-container">
+            <i class="fas fa-dna" style="font-size: 5rem; color: var(--dorado-tesla);"></i>
             <h3>Activar Red de Conciencia</h3>
-            <p style="color:#666; font-size:0.9rem;">Ingresa el código de resonancia para liberar los protocolos.</p>
-            <input type="password" id="inputTesla" placeholder="CÓDIGO 369">
-            <button class="btn-unlock-red" onclick="unlockAll()">SINCRONIZAR</button>
-            <p style="margin-top:30px; font-size:0.65rem; color:var(--dorado-tesla); letter-spacing:2px;">"Si supieras la magnificencia..."</p>
+            <p style="color:#444; margin-top:20px;">Introduzca su frecuencia de acceso (CODEX)</p>
+            <input type="password" id="input-key" placeholder="369">
+            <button class="btn-sync" onclick="unlockRed()">Sincronizar</button>
         </div>
     </div>
 
 </div>
 
-<a href="https://wa.me/56966911115" class="ws-button" target="_blank">
+<a href="https://wa.me/56966911115" class="ws-float-master" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 
 <footer>
     Cáceres Protector de Frecuencias & Espacios Vivos ©️ 2026<br>
-    SEMIBRANDO CONCIENCIA | ORGÁNICO Y SUSTENTABLE
+    <div class="tech-footer-detail">SEMIBRANDO CONCIENCIA | ORGÁNICO Y SUSTENTABLE</div>
 </footer>
 
 <script>
-    // NAVEGACIÓN ENTRE SECCIONES
-    function showTab(id) {
-        const windows = document.getElementsByClassName("window");
-        for (let i = 0; i < windows.length; i++) {
-            windows[i].classList.remove("active");
+    // SISTEMA DE NAVEGACIÓN
+    function navTo(tabId) {
+        const sections = document.getElementsByClassName("window");
+        for (let i = 0; i < sections.length; i++) {
+            sections[i].classList.remove("active");
         }
-        const buttons = document.querySelectorAll("nav button");
-        buttons.forEach(b => b.classList.remove("active-nav"));
         
-        document.getElementById(id).classList.add("active");
-        document.getElementById("t-" + id).classList.add("active-nav");
+        const navBtns = document.querySelectorAll("nav button");
+        navBtns.forEach(btn => btn.classList.remove("active-nav"));
+        
+        document.getElementById(tabId).classList.add("active");
+        document.getElementById("btn-" + tabId).classList.add("active-nav");
         window.scrollTo(0,0);
     }
 
-    // DESBLOQUEO DE CONTENIDO PROTEGIDO
-    function unlockAll() {
-        const key = document.getElementById("inputTesla").value;
-        const status = document.getElementById("mainStatus");
-
-        if (key === "Tesla369") {
-            // Quitar Overlays
-            document.getElementById("labShield").style.display = "none";
-            document.getElementById("invShield").style.display = "none";
+    // LÓGICA DE DESBLOQUEO DE RED
+    function unlockRed() {
+        const pass = document.getElementById("input-key").value;
+        if (pass === "Tesla369") {
+            // Eliminar bloqueos
+            document.getElementById("lab-lock").style.display = "none";
+            document.getElementById("inv-lock").style.display = "none";
             
-            // Quitar Filtro Blur
-            document.getElementById("labContent").classList.remove("is-locked");
-            document.getElementById("invContent").classList.remove("is-locked");
+            // Revelar contenido
+            document.getElementById("lab-data").classList.remove("is-locked");
+            document.getElementById("inv-data").classList.remove("is-locked");
             
-            status.innerText = "ACCESO TOTAL CONCEDIDO";
+            // Actualizar Estatus
+            const status = document.getElementById("main-status");
+            status.innerText = "SISTEMA: ACCESO CONCEDIDO";
             status.style.color = "var(--verde-vida)";
             status.style.borderColor = "var(--verde-vida)";
-
-            alert("Frecuencia Sincronizada con Éxito.");
-            showTab('laboratorio');
+            
+            alert("Resonancia Establecida. Bienvenido, Protector.");
+            navTo('laboratorio');
         } else {
-            alert("Resonancia Errónea.");
+            alert("Frecuencia Incorrecta. El controlador está observando.");
         }
     }
 </script>
