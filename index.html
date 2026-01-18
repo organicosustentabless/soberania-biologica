@@ -13,7 +13,7 @@ index.html
             --gris-box: #151515;
             --blanco-puro: #ffffff;
             --verde-vida: #2e7d32;
-            --oro-glow: rgba(184, 134, 11, 0.4);
+            --oro-resplandor: rgba(184, 134, 11, 0.3);
         }
 
         body { 
@@ -36,13 +36,12 @@ index.html
         }
         .brand h1 { color: #1b3d18; margin: 0; text-transform: uppercase; font-size: 1.8rem; letter-spacing: 2px; }
         .brand h2 { color: var(--dorado-tesla); margin: 0; font-size: 0.95rem; font-weight: 400; }
-        
-        .member-status { font-size: 0.7rem; color: #666; text-transform: uppercase; border: 1px solid #ddd; padding: 5px 10px; border-radius: 3px; }
+        .status-badge { font-size: 0.7rem; color: #666; text-transform: uppercase; border: 1px solid #ddd; padding: 5px 10px; border-radius: 3px; letter-spacing: 1px; }
 
         /* NAVEGACIÓN TÉCNICA */
         nav { 
             background: #000; 
-            padding: 5px; 
+            padding: 10px; 
             text-align: center; 
             border-bottom: 1px solid #222;
             position: sticky;
@@ -53,54 +52,51 @@ index.html
             background: transparent;
             border: 1px solid transparent;
             color: #fff;
-            padding: 12px 18px;
+            padding: 12px 20px;
             text-transform: uppercase;
             font-weight: bold;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             cursor: pointer;
             transition: 0.3s;
-            letter-spacing: 1px;
         }
-        nav button:hover { border-color: var(--dorado-tesla); color: var(--dorado-tesla); }
-        nav button.btn-member { color: var(--dorado-tesla); border: 1px solid var(--dorado-tesla); margin-left: 10px; }
+        nav button:hover { border-bottom: 2px solid var(--dorado-tesla); color: var(--dorado-tesla); }
+        nav button.active-nav { color: var(--dorado-tesla); border-bottom: 2px solid var(--dorado-tesla); }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         
         /* SISTEMA DE VENTANAS */
-        .window { display: none; animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .window { display: none; animation: slideUp 0.4s ease-out; }
         .window.active { display: block; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        @keyframes slideIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
-
-        /* BARRA DE ESTADO BIOFÍSICO */
-        .status-bar { 
+        /* BARRA DE IMPACTO 3-6-9 */
+        .impact-bar { 
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background: #000;
+            padding: 30px;
+            border: 1px solid var(--dorado-tesla);
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .status-item { 
-            background: #000; 
-            padding: 15px; 
-            border: 1px solid #222; 
-            text-align: center;
-            border-bottom: 2px solid var(--dorado-tesla);
-        }
-        .status-item span { display: block; color: var(--dorado-tesla); font-size: 1.2rem; font-weight: bold; font-family: monospace; }
-        .status-item label { font-size: 0.6rem; text-transform: uppercase; color: #555; }
+        .impact-item { text-align: center; border-right: 1px solid #222; }
+        .impact-item:last-child { border-right: none; }
+        .impact-item span { display: block; color: var(--dorado-tesla); font-size: 1.8rem; font-weight: bold; font-family: 'Courier New', monospace; }
+        .impact-item label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: #555; }
 
         /* GRID Y BOXES */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
         
         .box { 
             background: var(--gris-box); 
             border: 1px solid #222; 
-            border-radius: 2px; 
+            border-radius: 4px; 
             overflow: hidden;
-            transition: 0.3s;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
         }
-        .box:hover { border-color: var(--dorado-tesla); box-shadow: 0 0 20px var(--oro-glow); }
+        .box:hover { border-color: var(--dorado-tesla); box-shadow: 0 0 25px var(--oro-resplandor); transform: translateY(-5px); }
 
         .box-header { 
             background: #111; 
@@ -110,68 +106,79 @@ index.html
             justify-content: space-between;
             align-items: center;
         }
-        .box-header h3 { color: var(--dorado-tesla); margin: 0; font-size: 0.85rem; text-transform: uppercase; }
+        .box-header h3 { color: var(--dorado-tesla); margin: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
         
-        .box-content { padding: 25px; }
-        .box-content p { font-size: 0.85rem; color: #aaa; }
+        .box-content { padding: 30px; }
+        .box-content p { font-size: 0.9rem; color: #999; line-height: 1.7; }
 
-        /* SECCIÓN LOGIN / MEMBRESÍA */
-        .login-card {
-            max-width: 400px;
+        /* SECCIÓN MEMBRESÍA / LOGIN */
+        .membership-portal {
+            max-width: 450px;
             margin: 60px auto;
             background: var(--gris-box);
-            padding: 40px;
+            padding: 50px;
             border: 1px solid var(--dorado-tesla);
             text-align: center;
+            box-shadow: 0 0 40px rgba(0,0,0,0.8);
         }
-        .login-card input {
+        .membership-portal input {
             width: 100%;
-            padding: 12px;
-            margin: 10px 0;
+            padding: 15px;
+            margin: 20px 0;
             background: #000;
             border: 1px solid #333;
-            color: white;
-            box-sizing: border-box;
+            color: var(--dorado-tesla);
+            text-align: center;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
         }
-        .btn-action {
+        .btn-unlock {
             background: var(--dorado-tesla);
-            color: black;
+            color: #000;
             border: none;
-            padding: 12px 30px;
+            padding: 15px 40px;
             font-weight: bold;
             text-transform: uppercase;
             cursor: pointer;
-            margin-top: 10px;
             width: 100%;
+            transition: 0.3s;
         }
+        .btn-unlock:hover { background: #fff; }
 
-        /* PROTOCOLOS BLOQUEADOS */
-        .locked-content {
-            filter: blur(4px);
-            pointer-events: none;
-            user-select: none;
-        }
-        .lock-overlay {
+        /* CONTENIDO PROTEGIDO */
+        .secret-shield {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.92);
+            z-index: 20;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            z-index: 10;
+            backdrop-filter: blur(10px);
+            color: var(--dorado-tesla);
         }
+        .is-locked { filter: blur(15px); pointer-events: none; }
 
-        /* TECH NOTES & LISTS */
-        .tech-list { list-style: none; padding: 0; }
-        .tech-list li { font-size: 0.8rem; margin-bottom: 8px; border-left: 2px solid var(--dorado-tesla); padding-left: 10px; }
+        /* INVESTIGACIÓN & PLAYLIST */
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; margin-top: 20px; border: 1px solid #222; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; background: #000; margin-top: 15px; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid #333; }
+        .file-link { 
+            display: flex; 
+            align-items: center; 
+            padding: 12px; 
+            background: #111; 
+            margin-bottom: 10px; 
+            text-decoration: none; 
+            color: #ccc;
+            border-left: 3px solid var(--dorado-tesla);
+        }
+        .file-link:hover { background: #1a1a1a; color: var(--dorado-tesla); }
 
-        .btn-ws { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; z-index: 999; }
-        
-        footer { text-align: center; padding: 100px 20px; font-size: 0.7rem; color: #444; border-top: 1px solid #111; text-transform: uppercase; letter-spacing: 2px; }
+        /* FOOTER & WHATSAPP */
+        .btn-float-ws { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; text-decoration: none; z-index: 999; box-shadow: 0 5px 20px rgba(0,0,0,0.4); }
+        footer { text-align: center; padding: 100px 20px; font-size: 0.75rem; color: #444; border-top: 1px solid #111; text-transform: uppercase; letter-spacing: 2px; }
     </style>
 </head>
 <body>
@@ -181,46 +188,46 @@ index.html
         <h1>Orgánico y Sustentable</h1>
         <h2>Cáceres Protector de Frecuencias & Espacios Vivos</h2>
     </div>
-    <div class="member-status">Frecuencia: 432Hz | Modo: Protegido</div>
+    <div class="status-badge" id="mainStatus">Nivel de Frecuencia: Protegido</div>
 </header>
 
-<nav>
+<nav id="mainNav">
     <button onclick="openTab('servicios')">Insumos y Servicios</button>
     <button onclick="openTab('vivero')">Vivero en Línea</button>
     <button onclick="openTab('laboratorio')">Laboratorio Tesla</button>
     <button onclick="openTab('investigacion')">Investigación</button>
+    <button onclick="openTab('membresia')" style="color:var(--dorado-tesla)">Red de Conciencia</button>
     <button onclick="openTab('comunidad')">Comunidad</button>
-    <button onclick="openTab('membresia')" class="btn-member"><i class="fas fa-lock"></i> Área Privada</button>
 </nav>
 
 <div class="container">
 
-    <div class="status-bar">
-        <div class="status-item"><span>369 m²</span><label>Protección Activa</label></div>
-        <div class="status-item"><span>SiO2</span><label>Diatomea Coloidal</label></div>
-        <div class="status-item"><span>+14%</span><label>Germinación Arginina</label></div>
-        <div class="status-item"><span>A++</span><label>Energía Orgánica</label></div>
+    <div class="impact-bar">
+        <div class="impact-item"><span>369 m²</span><label>Área de Cobertura</label></div>
+        <div class="impact-item"><span>SiO2</span><label>Diatomea Pura</label></div>
+        <div class="impact-item"><span>432Hz</span><label>Resonancia Base</label></div>
+        <div class="impact-item"><span>1V/m</span><label>Umbral de Escudo</label></div>
     </div>
 
     <div id="servicios" class="window active">
         <div class="grid">
             <div class="box">
-                <div class="box-header"><h3>Mantenimiento</h3><i class="fas fa-leaf"></i></div>
+                <div class="box-header"><h3>Mantenimiento Biofísico</h3><i class="fas fa-leaf"></i></div>
                 <div class="box-content">
-                    <p>Mullido, Aireado, Podas fitosanitarias e Informe de Salud Vegetal.</p>
-                    <div style="color:var(--verde-vida); font-size:0.7rem; font-weight:bold;">Suscripción Mensual Activa</div>
+                    <p>Sistemas de mullido y aireado con protocolos de salud vegetal orgánica. Informe mensual de bio-indicadores.</p>
+                    <div style="color:var(--verde-vida); font-size:0.7rem; font-weight:bold; margin-top:10px;">CONVENIO MENSUAL DISPONIBLE</div>
                 </div>
             </div>
             <div class="box">
-                <div class="box-header"><h3>Escudos Vegetales</h3><i class="fas fa-broadcast-tower"></i></div>
+                <div class="box-header"><h3>Escudos de Frecuencia</h3><i class="fas fa-shield-alt"></i></div>
                 <div class="box-content">
-                    <p>Diseño de espacios para mitigación de saturación electromagnética (1V/m).</p>
+                    <p>Diseño de barreras vegetales para mitigar la saturación electromagnética ambiental. Fotomontaje y medición técnica.</p>
                 </div>
             </div>
             <div class="box">
-                <div class="box-header"><h3>Nutrición Celular</h3><i class="fas fa-atom"></i></div>
+                <div class="box-header"><h3>Nutrición SiO2</h3><i class="fas fa-vial"></i></div>
                 <div class="box-content">
-                    <p>Sistemas de control hídrico y aplicación de SiO2 para radícula potente.</p>
+                    <p>Tratamientos radiculares con Diatomea de alta pureza. Fortalecimiento estructural contra el controlador externo.</p>
                 </div>
             </div>
         </div>
@@ -228,75 +235,54 @@ index.html
 
     <div id="vivero" class="window">
         <div class="grid">
-            <div class="box">
-                <div class="box-header"><h3>Catálogo de Árboles</h3></div>
-                <div class="box-content">
-                    <p>Ejemplares producidos bajo protocolos Tesla para reventa.</p>
-                    <button class="btn-action" style="font-size: 0.7rem;">Ver Inventario</button>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-header"><h3>Radiación Solar</h3></div>
-                <div class="box-content">
-                    <p>Especies seleccionadas por su capacidad de transcepción bioeléctrica.</p>
-                </div>
-            </div>
+            <div class="box"><div class="box-content"><h3>Plantas de Alta Radiación</h3><p>Especies transceptoras para sol directo.</p></div></div>
+            <div class="box"><div class="box-content"><h3>Soberanía de Interior</h3><p>Protectores biológicos para espacios de sombra.</p></div></div>
+            <div class="box"><div class="box-content"><h3>Catálogo Árboles</h3><p>Reserva y reventa de ejemplares nativos y ornamentales.</p></div></div>
         </div>
     </div>
 
     <div id="laboratorio" class="window">
         <div class="grid">
-            <div class="box">
-                <div class="box-header"><h3>Reactor 3-6-9</h3></div>
-                <div class="box-content">
-                    <p>Diseño de mini reactores de 1 litro para dinamización hídrica.</p>
-                    <div class="tech-list">
-                        <li>Frecuencia de oscilación: 3.6MHz</li>
-                        <li>Material: Orgánico / Sustentable</li>
+            <div class="box" style="min-height: 300px;">
+                <div class="secret-shield" id="labLock">
+                    <i class="fas fa-key" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                    <h4 style="margin:0;">ACCESO RESTRINGIDO</h4>
+                    <p style="font-size: 0.7rem;">Requiere Activación de Membresía</p>
+                </div>
+                
+                <div class="box-content is-locked" id="labContent">
+                    <h3>Protocolo SiO2 + L-Arginina</h3>
+                    <p>Fórmula de germinación potente: Activación molecular para una explosión de vida radicular.</p>
+                    <div style="background:#000; padding:15px; border:1px dashed var(--dorado-tesla); font-family: monospace; font-size:0.8rem;">
+                        [DETALLE TÉCNICO DESBLOQUEADO]<br>
+                        1. Dinamización en Reactor de 1L (Frecuencia 3.6.9)<br>
+                        2. Sinergia de Arginina al 0.5% en solución coloidal SiO2...
                     </div>
                 </div>
             </div>
             <div class="box">
-                <div class="lock-overlay">
-                    <i class="fas fa-lock" style="font-size: 2rem; color: var(--dorado-tesla);"></i>
-                    <p style="font-size: 0.7rem; margin-top: 10px;">SOLO PARA MIEMBROS</p>
-                </div>
-                <div class="box-header"><h3>Protocolo Germinación Potente</h3></div>
-                <div class="box-content locked-content">
-                    <p>Detalle de mezcla SiO2 + L-Arginina...</p>
-                    <p>Pasos 1 al 9 para activación celular...</p>
+                <div class="box-content">
+                    <h3>Reactores de Vida 1L</h3>
+                    <p>Inventos basados en la matemática de Tesla para la re-estructuración del agua de riego.</p>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div id="membresia" class="window">
-        <div class="login-card">
-            <i class="fas fa-user-shield" style="font-size: 3rem; color: var(--dorado-tesla); margin-bottom: 20px;"></i>
-            <h3 style="color: white; margin: 0;">Red de Conciencia</h3>
-            <p style="font-size: 0.7rem; color: #666;">Ingresa tu código de protector</p>
-            <input type="text" placeholder="ID de Miembro">
-            <input type="password" placeholder="Password">
-            <button class="btn-action">Conectar con la Red</button>
-            <p style="font-size: 0.6rem; margin-top: 20px; color: var(--dorado-tesla);">¿Aún no eres miembro? Consulta por tu suscripción mensual.</p>
         </div>
     </div>
 
     <div id="investigacion" class="window">
         <div class="grid">
             <div class="box">
-                <div class="box-header"><h3>Biofísica y Paradigmas</h3></div>
                 <div class="box-content">
-                    <ul class="tech-list">
-                        <li><i class="fas fa-file-pdf"></i> Antenas Biológicas.pdf</li>
-                        <li><i class="fas fa-file-pdf"></i> El Universo Eléctrico.pdf</li>
-                    </ul>
+                    <h3>Biblioteca de Paradigmas</h3>
+                    <a href="#" class="file-link"><i class="fas fa-file-pdf" style="margin-right:10px"></i> Biofísica del SiO2.pdf</a>
+                    <a href="#" class="file-link"><i class="fas fa-file-pdf" style="margin-right:10px"></i> Universo Eléctrico.pdf</a>
+                    <a href="#" class="file-link"><i class="fas fa-file-pdf" style="margin-right:10px"></i> Geometría Sagrada aplicada.pdf</a>
                 </div>
             </div>
             <div class="box">
-                <div class="box-header"><h3>Música Consciente</h3></div>
                 <div class="box-content">
-                    <div class="video-wrapper">
+                    <h3>Frecuencias de Sanación</h3>
+                    <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_m5l6In0DTu6NSXLwy_Ye14syH-HI5rM9U" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
@@ -304,26 +290,69 @@ index.html
         </div>
     </div>
 
+    <div id="membresia" class="window">
+        <div class="membership-portal">
+            <i class="fas fa-dna" style="font-size: 3.5rem; color: var(--dorado-tesla); margin-bottom: 25px;"></i>
+            <h3 style="color: #fff; text-transform: uppercase;">Red de Conciencia</h3>
+            <p style="font-size: 0.8rem; color: #777;">Sincroniza tu frecuencia de acceso</p>
+            
+            <input type="password" id="passCode" placeholder="CÓDIGO TESLA">
+            
+            <button class="btn-unlock" onclick="activarRed()">Activar Membresía</button>
+            
+            <p style="font-size: 0.6rem; margin-top: 30px; color: var(--dorado-tesla); letter-spacing: 1px;">
+                "Si supieras la magnificencia del 3, 6 y 9..."
+            </p>
+        </div>
+    </div>
+
     <div id="comunidad" class="window">
-        <div style="background:#fff; padding:20px; border-radius:2px; display: flex; justify-content: center;">
+        <div style="display: flex; justify-content: center; background: #fff; padding: 20px; border-radius: 4px;">
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Forganico.sustentable.1&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
         </div>
     </div>
 
 </div>
 
-<a href="https://wa.me/56966911115" class="btn-ws" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/56966911115" class="btn-float-ws" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <footer>
-    Orgánico y Sustentable ©️ 2026 | Cáceres Protector de Frecuencias & Espacios Vivos | Sembrando ConCiencia
+    Orgánico y Sustentable ©️ 2026 | Sembrando ConCiencia | Cáceres Protector de Frecuencias & Espacios Vivos
 </footer>
 
 <script>
+    // SISTEMA DE NAVEGACIÓN
     function openTab(tabId) {
-        var i, x = document.getElementsByClassName("window");
-        for (i = 0; i < x.length; i++) { x[i].classList.remove("active"); }
+        const windows = document.getElementsByClassName("window");
+        for (let i = 0; i < windows.length; i++) {
+            windows[i].classList.remove("active");
+        }
         document.getElementById(tabId).classList.add("active");
         window.scrollTo(0,0);
+    }
+
+    // SISTEMA DE ACTIVACIÓN DE RED (MEMBRESÍA)
+    function activarRed() {
+        const passwordMaestro = "Tesla369";
+        const entrada = document.getElementById("passCode").value;
+        const statusHeader = document.getElementById("mainStatus");
+
+        if (entrada === passwordMaestro) {
+            // DESBLOQUEO DE CONTENIDO
+            document.getElementById("labLock").style.display = "none";
+            document.getElementById("labContent").classList.remove("is-locked");
+            document.getElementById("labContent").style.filter = "none";
+            
+            // ACTUALIZACIÓN DE ESTADO
+            statusHeader.innerText = "MODO: ACCESO TOTAL CONCEDIDO";
+            statusHeader.style.color = "var(--verde-vida)";
+            statusHeader.style.borderColor = "var(--verde-vida)";
+
+            alert("Frecuencia Sincronizada. El conocimiento ha sido liberado.");
+            openTab('laboratorio'); 
+        } else {
+            alert("Frecuencia Errónea. El acceso permanece protegido.");
+        }
     }
 </script>
 
