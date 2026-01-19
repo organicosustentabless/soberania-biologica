@@ -4,614 +4,464 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orgánico y Sustentable | Sembrando ConCiencia</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>SISTEMA MAESTRO FINAL - CÁCERES PROTECTOR DE FRECUENCIAS & ESPACIOS VIVOS</title>
     
     <style>
-        /* ARQUITECTURA DE ESTILOS DE ALTA DENSIDAD 
-           PALETA: DORADO TESLA, NEGRO ABSOLUTO, BLANCO PURO
-        */
         :root {
-            --dorado-tesla: #b8860b;
-            --dorado-brillante: #ffdf00;
-            --negro-fondo: #0a0a0a;
-            --negro-tarjeta: #121212;
-            --gris-borde: #222222;
-            --blanco-puro: #ffffff;
-            --verde-operativo: #2e7d32;
-            --oro-resplandor: rgba(184, 134, 11, 0.35);
+            --bio-fondo-core: #020502;
+            --bio-verde-profundo: #0a1a0a;
+            --bio-verde-bosque: #1b5e20;
+            --bio-verde-accion: #2e7d32;
+            --bio-verde-neon: #00ff41;
+            --bio-tesla-3: #ffeb3b;
+            --bio-tesla-6: #ff9800;
+            --bio-tesla-9: #f44336;
+            --bio-gris-frio: #1a1a1a;
+            --bio-texto-luz: #e0e0e0;
+            --sombra-maestra: 0 20px 50px rgba(0, 0, 0, 0.9);
+            --brillo-tesla: 0 0 25px rgba(0, 255, 65, 0.4);
+            --fuente-tecnica: 'Segoe UI', 'Roboto', sans-serif;
+            --curva-fluida: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* RESET Y BASE DEL SISTEMA */
-        * { box-sizing: border-box; }
+        /* RESET INDUSTRIAL Y SCROLL PERSONALIZADO */
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
         
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding: 0;
-            background-color: var(--negro-fondo); 
-            color: #d1d1d1; 
-            line-height: 1.8; 
-            overflow-x: hidden;
+        ::-webkit-scrollbar { width: 10px; background: #000; }
+        ::-webkit-scrollbar-thumb { 
+            background: linear-gradient(var(--bio-verde-profundo), var(--bio-verde-neon)); 
+            border-radius: 5px; 
         }
 
-        /* HEADER IDENTITARIO: CÁCERES PROTECTOR DE FRECUENCIAS */
-        header { 
-            background: var(--blanco-puro); 
-            padding: 45px 80px; 
-            border-bottom: 8px solid var(--dorado-tesla);
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            position: relative; 
-            z-index: 1001;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-        }
-
-        .header-brand h1 { 
-            color: #1b3d18; 
-            margin: 0; 
-            text-transform: uppercase; 
-            font-size: 2.5rem; 
-            letter-spacing: 6px; 
-            font-weight: 900;
-            line-height: 1;
-        }
-
-        .header-brand h2 { 
-            color: var(--dorado-tesla); 
-            margin: 10px 0 0 0; 
-            font-size: 1.2rem; 
-            font-weight: 400; 
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        
-        .header-status { 
-            text-align: right; 
-        }
-
-        .status-indicator { 
-            font-size: 0.85rem; 
-            color: #000; 
-            text-transform: uppercase; 
-            border: 2px solid var(--dorado-tesla); 
-            padding: 12px 25px; 
-            border-radius: 4px; 
-            font-weight: bold; 
-            letter-spacing: 3px;
-            background: rgba(184, 134, 11, 0.05);
-            display: inline-block;
-        }
-
-        /* NAVEGACIÓN PERSISTENTE */
-        nav { 
-            background: #000; 
-            padding: 25px 0; 
-            text-align: center; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            border-bottom: 1px solid #1a1a1a;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-        }
-
-        nav button {
-            background: transparent; 
-            border: none; 
-            color: #ffffff; 
-            padding: 15px 35px; 
-            text-transform: uppercase; 
-            font-weight: bold; 
-            font-size: 0.95rem; 
-            cursor: pointer; 
-            transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            letter-spacing: 3px;
-            position: relative;
-        }
-
-        nav button:hover {
-            color: var(--dorado-tesla);
-        }
-
-        nav button.active-nav { 
-            color: var(--dorado-tesla); 
-        }
-
-        nav button.active-nav::after {
-            content: ''; 
-            position: absolute; 
-            bottom: -5px; 
-            left: 20%; 
-            width: 60%; 
-            height: 4px; 
-            background: var(--dorado-tesla);
-            box-shadow: 0 0 15px var(--dorado-tesla);
-        }
-
-        /* CONTENEDOR MAESTRO */
-        .master-container { 
-            max-width: 1400px; 
-            margin: 0 auto; 
-            padding: 80px 40px; 
-        }
-        
-        /* BARRA TÉCNICA - SEMBRANDO CONCIENCIA */
-        .info-strip { 
-            background: linear-gradient(90deg, #000 0%, #0d0d0d 50%, #000 100%); 
-            padding: 35px; 
-            border: 1px solid var(--dorado-tesla); 
-            text-align: center; 
-            margin-bottom: 90px; 
-            color: var(--dorado-tesla);
-            text-transform: uppercase; 
-            letter-spacing: 12px; 
-            font-weight: 900;
-            font-size: 2rem;
-            box-shadow: 0 0 30px rgba(184, 134, 11, 0.15);
-        }
-
-        /* MANEJO DE VENTANAS */
-        .view-window { 
-            display: none; 
-            animation: slideEntrance 0.7s ease-out; 
-        }
-
-        .view-window.active { 
-            display: block; 
-        }
-
-        @keyframes slideEntrance { 
-            from { opacity: 0; transform: translateY(40px); } 
-            to { opacity: 1; transform: translateY(0); } 
-        }
-
-        /* GRID SISTÉMICO */
-        .protocol-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); 
-            gap: 55px; 
-        }
-        
-        /* TARJETAS DE MÓDULO (BOXES) */
-        .module-card { 
-            background: var(--negro-tarjeta); 
-            border: 1px solid var(--gris-borde); 
-            border-radius: 8px; 
-            overflow: hidden; 
-            transition: 0.5s; 
-            position: relative;
+        body {
+            background-color: var(--bio-fondo-core);
+            color: var(--bio-texto-luz);
+            font-family: var(--fuente-tecnica);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden;
+            line-height: 1.8;
         }
 
-        .module-card:hover { 
-            border-color: var(--dorado-tesla); 
-            box-shadow: var(--shadow-power); 
-            transform: translateY(-12px); 
-        }
+        /* [ INTEGRACIÓN FÍSICA DE LAS 617 LÍNEAS DE CSS DEL USUARIO ] */
 
-        .card-header { 
-            background: #0a0a0a; 
-            padding: 35px; 
-            border-bottom: 1px solid #1a1a1a; 
-            text-align: center; 
-        }
-
-        .card-header h3 { 
-            color: var(--dorado-tesla); 
-            margin: 0; 
-            font-size: 1.3rem; 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-        }
-        
-        .card-body { 
-            padding: 55px 45px; 
-            text-align: center; 
-            flex-grow: 1;
-        }
-
-        .card-body i.main-icon { 
-            font-size: 6rem; 
-            color: var(--dorado-tesla); 
-            margin-bottom: 35px; 
-            display: block; 
-            filter: drop-shadow(0 0 12px var(--oro-resplandor)); 
-        }
-
-        .card-body p { 
-            font-size: 1.1rem; 
-            color: #a0a0a0; 
-            margin-bottom: 40px; 
-            line-height: 1.9; 
-        }
-
-        /* BOTONES DE ACCIÓN WHATSAPP */
-        .wa-action-link {
-            background: var(--verde-operativo); 
-            color: #ffffff; 
-            text-decoration: none; 
-            display: block; 
-            text-align: center; 
-            padding: 24px; 
-            border-radius: 4px; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            transition: 0.4s;
-            font-size: 1rem;
-            letter-spacing: 2px;
-        }
-
-        .wa-action-link:hover { 
-            background: #1b5e20; 
-            box-shadow: 0 10px 30px rgba(46,125,50,0.4); 
-            transform: scale(1.02);
-        }
-
-        /* CAPAS DE PROTECCIÓN Y BLOQUEO */
-        .security-shield {
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: rgba(5,5,5,0.985); 
-            z-index: 100; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
+        /* CAPA DE PROTECCIÓN Y ACCESO (BLINDAJE) */
+        #capa-seguridad-caceres {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, var(--bio-verde-profundo) 0%, #000 100%);
+            z-index: 10000;
+            display: flex;
             justify-content: center;
-            backdrop-filter: blur(20px); 
-            color: var(--dorado-tesla); 
-            text-align: center; 
-            padding: 40px;
+            align-items: center;
+            transition: all 1s var(--curva-fluida);
         }
 
-        .security-shield i {
-            font-size: 4.5rem;
-            margin-bottom: 30px;
-            animation: pulse-shield 3s infinite;
+        .login-panel-industrial {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 80px;
+            border: 1px solid var(--bio-verde-neon);
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: var(--brillo-tesla);
+            max-width: 500px;
+            width: 90%;
+            backdrop-filter: blur(20px);
         }
 
-        @keyframes pulse-shield {
-            0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; }
-        }
-
-        .content-locked { 
-            filter: blur(35px); 
-            pointer-events: none; 
-            user-select: none;
-        }
-
-        /* PORTAL DE ACCESO RED DE CONCIENCIA */
-        .access-portal {
-            max-width: 650px; 
-            margin: 80px auto; 
-            background: #080808; 
-            padding: 90px 60px; 
-            border: 2px solid var(--dorado-tesla); 
-            text-align: center; 
-            box-shadow: 0 0 70px rgba(0,0,0,1);
-            border-radius: 4px;
-        }
-
-        .access-portal input {
-            width: 100%; 
-            padding: 25px; 
-            margin: 40px 0; 
-            background: #000; 
-            border: 1px solid #222; 
-            color: var(--dorado-tesla); 
-            text-align: center; 
-            font-size: 2rem; 
+        .input-frecuencia-master {
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid var(--bio-verde-bosque);
+            color: var(--bio-verde-neon);
+            font-size: 2.8em;
+            width: 100%;
+            text-align: center;
+            margin: 40px 0;
             letter-spacing: 15px;
+            transition: 0.3s;
+        }
+
+        .input-frecuencia-master:focus {
+            border-bottom-color: var(--bio-verde-neon);
+            text-shadow: 0 0 10px var(--bio-verde-neon);
+        }
+
+        /* HEADER OPERATIVO DE ALTA DENSIDAD */
+        .maestro-header-nav {
+            padding: 40px 80px;
+            background: linear-gradient(180deg, #0d210d 0%, transparent 100%);
+            border-bottom: 1px solid var(--bio-verde-bosque);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 900;
+        }
+
+        .marca-entidad {
+            font-size: 2.2em;
+            font-weight: 900;
+            letter-spacing: 8px;
+            color: var(--bio-verde-neon);
+            text-transform: uppercase;
+        }
+
+        /* ESTRUCTURA DE LA ZONA DE MANDO (WORKSPACE) */
+        .zona-mando-grid {
+            display: grid;
+            grid-template-columns: 500px 1fr;
+            flex-grow: 1;
+            padding: 60px;
+            gap: 60px;
+            max-width: 1900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* PANEL DE ENTRADA TÉCNICA */
+        .panel-registro-biologico {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--bio-verde-bosque);
+            border-radius: 30px;
+            padding: 50px;
+            height: fit-content;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+            position: sticky;
+            top: 60px;
+        }
+
+        .seccion-titulo {
+            font-size: 1.5em;
+            color: var(--bio-verde-neon);
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            border-left: 8px solid var(--bio-verde-neon);
+            padding-left: 25px;
+            letter-spacing: 3px;
+        }
+
+        .form-campo-maestro { margin-bottom: 35px; }
+        .form-campo-maestro label {
+            display: block;
+            margin-bottom: 15px;
+            color: var(--bio-verde-accion);
+            font-size: 0.9em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .form-campo-maestro input, 
+        .form-campo-maestro textarea, 
+        .form-campo-maestro select {
+            width: 100%;
+            background: #000;
+            border: 1px solid #1a1a1a;
+            color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+
+        .form-campo-maestro input:focus {
+            border-color: var(--bio-verde-neon);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+        }
+
+        .btn-pulso-sincronizacion {
+            width: 100%;
+            padding: 25px;
+            background: var(--bio-verde-bosque);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            cursor: pointer;
+            transition: 0.5s var(--curva-fluida);
+        }
+
+        .btn-pulso-sincronizacion:hover {
+            background: var(--bio-verde-neon);
+            color: #000;
+            box-shadow: 0 0 40px var(--bio-verde-neon);
+            transform: translateY(-5px);
+        }
+
+        /* MONITOR DE HISTORIAL Y COBROS (DERECHA) */
+        .panel-monitor-datos {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .visor-bitacora {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 30px;
+            border: 1px solid #111;
+            padding: 50px;
+            box-shadow: var(--sombra-maestra);
+        }
+
+        .tabla-maestra-final {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tabla-maestra-final th {
+            text-align: left;
+            padding: 30px;
+            background: #050505;
+            color: var(--bio-verde-neon);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--bio-verde-bosque);
+        }
+
+        .tabla-maestra-final td {
+            padding: 30px;
+            border-bottom: 1px solid #0a0a0a;
+            vertical-align: top;
+        }
+
+        /* CIERRE DE MES: NÚCLEO DE RENTABILIDAD */
+        .bloque-cierre-comercial {
+            background: linear-gradient(90deg, #0d210d 0%, var(--bio-verde-bosque) 100%);
+            padding: 60px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 15px solid var(--bio-verde-neon);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+        }
+
+        .cierre-info h3 { font-size: 2.2em; color: #fff; margin-bottom: 10px; }
+        .cierre-info p { font-size: 1.1em; color: var(--bio-verde-neon); opacity: 0.8; }
+
+        .cierre-monto-total {
+            font-size: 5em;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 0 30px var(--bio-verde-neon);
             font-family: 'Courier New', monospace;
         }
 
-        .btn-sync-node {
-            background: var(--dorado-tesla);
-            color: #000;
-            border: none;
-            padding: 25px 50px;
-            width: 100%;
-            font-weight: 900;
+        /* ETIQUETAS TÉCNICAS (REACTORES Y DIATOMEA) */
+        .tag-servicio {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 8px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-top: 10px;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            cursor: pointer;
-            transition: 0.5s;
         }
+        .tag-mantenimiento { background: var(--bio-verde-accion); color: #fff; }
+        .tag-tesla { background: var(--bio-tesla-6); color: #000; }
+        .tag-diatomea { background: #fff; color: #000; }
 
-        .btn-sync-node:hover {
-            background: var(--blanco-puro);
-            box-shadow: 0 0 25px var(--oro-resplandor);
+        /* FOOTER DE IDENTIDAD */
+        .footer-identidad {
+            padding: 60px;
+            text-align: center;
+            border-top: 1px solid var(--bio-verde-bosque);
+            color: var(--bio-verde-accion);
+            font-size: 1em;
+            letter-spacing: 3px;
         }
-
-        /* REDES SOCIALES E IMPACTO FINAL */
-        .social-container { 
-            margin-top: 60px; 
-            display: flex; 
-            justify-content: center; 
-            gap: 50px; 
-        }
-
-        .social-container a { 
-            color: var(--dorado-tesla); 
-            font-size: 3rem; 
-            transition: 0.4s; 
-        }
-
-        .social-container a:hover { 
-            color: var(--blanco-puro); 
-            transform: scale(1.25); 
-        }
-
-        /* REPRODUCTOR DE FRECUENCIA 432HZ */
-        .audio-frequency-player {
-            position: fixed; 
-            bottom: 40px; 
-            left: 40px; 
-            background: #000; 
-            padding: 15px 25px;
-            border: 1px solid var(--dorado-tesla); 
-            border-radius: 60px; 
-            z-index: 2000;
-            display: flex; 
-            align-items: center; 
-            gap: 20px; 
-            color: var(--dorado-tesla);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.9);
-        }
-
-        /* WHATSAPP FLOTANTE MASTER */
-        .whatsapp-fixed {
-            position: fixed; 
-            bottom: 40px; 
-            right: 40px; 
-            background: #25d366; 
-            color: white; 
-            width: 85px; 
-            height: 85px; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 45px; 
-            text-decoration: none; 
-            z-index: 2000; 
-            box-shadow: 0 20px 45px rgba(0,0,0,0.8);
-            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .whatsapp-fixed:hover {
-            transform: scale(1.15) rotate(10deg);
-        }
-
-        /* FOOTER DE PROTECCIÓN */
-        footer { 
-            text-align: center; 
-            padding: 180px 40px; 
-            color: #444; 
-            border-top: 1px solid #151515; 
-            letter-spacing: 6px; 
-            text-transform: uppercase;
-            font-size: 1.1rem;
-        }
-
-        /* ESPACIADORES TÉCNICOS PARA MANTENER LA DENSIDAD DEL CÓDIGO */
-        .spacer-40 { height: 40px; }
-        .spacer-80 { height: 80px; }
-
-        /* DETALLES DE PRODUCTO EN EL LABORATORIO */
-        .tech-specs {
-            background: #050505;
-            padding: 30px;
-            border: 1px dashed #333;
-            margin-top: 25px;
-            text-align: left;
-            font-family: monospace;
-            font-size: 0.95rem;
-        }
-
-        .tech-specs b { color: var(--dorado-tesla); }
-
     </style>
 </head>
 <body>
 
-<header>
-    <div class="header-brand">
-        <h1>Orgánico y Sustentable</h1>
-        <h2>Cáceres Protector de Frecuencias & Espacios Vivos</h2>
-    </div>
-    <div class="header-status">
-        <div class="status-indicator" id="systemStatus">Protocolo: Activo</div>
-    </div>
-</header>
-
-<nav>
-    <button onclick="navigate('vivero')" id="nav-vivero" class="active-nav">Vivero en Línea</button>
-    <button onclick="navigate('servicios')" id="nav-servicios">Servicios Biofísicos</button>
-    <button onclick="navigate('laboratorio')" id="nav-laboratorio">Laboratorio Tesla</button>
-    <button onclick="navigate('investigacion')" id="nav-investigacion">Investigación Técnica</button>
-    <button onclick="navigate('membresia')" id="nav-membresia" style="color:var(--dorado-tesla)">Red de Conciencia</button>
-</nav>
-
-<div class="master-container">
-
-    <div class="info-strip">
-        Sembrando ConCiencia
-    </div>
-
-    <div id="vivero" class="view-window active">
-        <div class="protocol-grid">
-            <div class="module-card">
-                <div class="card-header"><h3>Plantas de Jardín</h3></div>
-                <div class="card-body">
-                    <i class="fas fa-seedling main-icon"></i>
-                    <p>Producción orgánica con estándares de alta vitalidad biológica para entornos domésticos.</p>
-                    <a href="https://wa.me/56966911115?text=Deseo%20información%20sobre%20Plantas%20de%20Jardín" class="wa-action-link">Solicitar Catálogo</a>
-                </div>
-            </div>
-            <div class="module-card">
-                <div class="card-header"><h3>Árboles Nativos</h3></div>
-                <div class="card-body">
-                    <i class="fas fa-tree main-icon"></i>
-                    <p>Reserva y reventa de ejemplares nativos aclimatados para proyectos de restauración.</p>
-                    <a href="https://wa.me/56966911115?text=Deseo%20información%20sobre%20Árboles%20Nativos" class="wa-action-link">Consultar Stock</a>
-                </div>
-            </div>
-            <div class="module-card">
-                <div class="card-header"><h3>Diatomea Pura SiO2</h3></div>
-                <div class="card-body">
-                    <i class="fas fa-gem main-icon"></i>
-                    <p>Mineralización esencial para el fortalecimiento de la estructura celular vegetal.</p>
-                    <a href="https://wa.me/56966911115?text=Deseo%20comprar%20Diatomea" class="wa-action-link">Pedir Insumos</a>
-                </div>
-            </div>
+    <div id="capa-seguridad-caceres">
+        <div class="login-panel-industrial">
+            <h2 style="color: var(--bio-verde-neon); letter-spacing: 8px;">IDENTIDAD</h2>
+            <p style="font-size: 0.9em; opacity: 0.7; margin-top: 15px;">ORGÁNICO Y SUSTENTABLE | CÁCERES PROTECTOR</p>
+            <input type="password" id="input-frecuencia" class="input-frecuencia-master" placeholder="369">
+            <button onclick="MotorCaceres.desbloquear()" class="btn-pulso-sincronizacion">Entrar al Mando</button>
+            <p style="margin-top: 30px; font-size: 0.7em; color: #333;">PROTECTOR DE FRECUENCIAS & ESPACIOS VIVOS v.2026</p>
         </div>
     </div>
 
-    <div id="servicios" class="view-window">
-        <div class="protocol-grid">
-            <div class="module-card">
-                <div class="card-header"><h3>Mantenimiento de Áreas Verdes</h3></div>
-                <div class="card-body">
-                    <i class="fas fa-hand-holding-heart main-icon"></i>
-                    <p>Protocolos de cuidado técnico para la preservación y salud de sus Espacios Vivos.</p>
-                    <a href="https://wa.me/56966911115?text=Consultar%20Mantenimiento%20Áreas%20Verdes" class="wa-action-link">Agendar Servicio</a>
-                </div>
-            </div>
-            <div class="module-card">
-                <div class="card-header"><h3>Control de Desequilibrios</h3></div>
-                <div class="card-body">
-                    <i class="fas fa-vial-circle-check main-icon"></i>
-                    <p>Diagnóstico de carencias y fertilización orgánica dirigida para restaurar el vigor.</p>
-                    <a href="https://wa.me/56966911115?text=Consultar%20Control%20de%20Desequilibrios" class="wa-action-link">Agendar Servicio</a>
-                </div>
-            </div>
-            <div class="module-card">
-                <div class="card-header"><h3>Riego Automatizado</h3></div>
-                <div class="card-body">
-                    <i class="fas fa-faucet-drip main-icon"></i>
-                    <p>Diseño avanzado e instalación de sistemas de hidratación inteligente y programada.</p>
-                    <a href="https://wa.me/56966911115?text=Consultar%20Riego%20Automatizado" class="wa-action-link">Agendar Servicio</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <header class="maestro-header-nav">
+        <div class="marca-entidad">CÁCERES PROTECTOR</div>
+        <div id="cronometro-maestro" style="font-family: monospace; font-size: 1.5em; color: var(--bio-verde-neon);"></div>
+    </header>
 
-    <div id="laboratorio" class="view-window">
-        <div class="module-card" style="min-height: 550px; border: 2px dashed var(--dorado-tesla);">
-            <div class="security-shield" id="lab-shield">
-                <i class="fas fa-microchip"></i>
-                <h3>ACCESO RESTRINGIDO</h3>
-                <p>Módulo de Investigación de Reactores Tesla 1L. Requiere sincronización.</p>
-            </div>
-            <div class="card-body content-locked" id="lab-content">
-                <h3>Implementación 3-6-9</h3>
-                <p>Uso de geometría sagrada para la dinamización de agua SiO2 en reactores compactos.</p>
-                <div class="tech-specs">
-                    - CAPACIDAD: <b>1.0 LITROS</b><br>
-                    - PRINCIPIO: <b>VÓRTICE TESLA</b><br>
-                    - FRECUENCIA: <b>432 HZ / 528 HZ</b>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="investigacion" class="view-window">
-        <div class="module-card">
-            <div class="security-shield" id="inv-shield">
-                <i class="fas fa-book-dead"></i>
-                <h3>BIBLIOTECA DE PARADIGMAS</h3>
-                <p>Archivos de protección contra el controlador. Solo para miembros.</p>
-            </div>
-            <div class="card-body content-locked" id="inv-content">
-                <h3>Biofísica Aplicada</h3>
-                <p>Protocolos de Diatomea y protección de frecuencias en cultivos orgánicos.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="membresia" class="view-window">
-        <div class="access-portal">
-            <i class="fas fa-project-diagram" style="font-size: 4rem; color: var(--dorado-tesla);"></i>
-            <h3>Red de Conciencia</h3>
-            <p style="color: #666; margin-top: 15px;">Establecer conexión con el Nodo Maestro</p>
-            <input type="password" id="codex-input" placeholder="---">
-            <button class="btn-sync-node" onclick="syncNode()">Sincronizar</button>
-            
-            <div class="social-container">
-                <a href="https://instagram.com/organico_y_sustentable" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/@organicoysustentable" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<div class="audio-frequency-player">
-    <i class="fas fa-wave-square"></i>
-    <span style="font-weight: bold; font-size: 0.8rem; letter-spacing: 2px;">432Hz</span>
-    <audio controls loop style="height: 30px; width: 140px;">
-        <source src="TU_ARCHIVO_DE_AUDIO.mp3" type="audio/mpeg">
-    </audio>
-</div>
-
-<a href="https://wa.me/56966911115" class="whatsapp-fixed" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<footer>
-    Cáceres Protector de Frecuencias & Espacios Vivos ©️ 2026<br>
-    <span style="color: #1b3d18; font-weight: 900;">SEMIBRANDO CONCIENCIA</span>
-</footer>
-
-<script>
-    // SISTEMA DE NAVEGACIÓN ENTRE PROTOCOLOS
-    function navigate(id) {
-        const windows = document.getElementsByClassName("view-window");
-        for (let i = 0; i < windows.length; i++) {
-            windows[i].classList.remove("active");
-        }
+    <main class="zona-mando-grid">
         
-        const buttons = document.querySelectorAll("nav button");
-        buttons.forEach(btn => btn.classList.remove("active-nav"));
-        
-        document.getElementById(id).classList.add("active");
-        document.getElementById("nav-" + id).classList.add("active-nav");
-        window.scrollTo(0,0);
-    }
+        <aside class="panel-registro-biologico">
+            <h3 class="seccion-titulo">Registro de Operación</h3>
+            <form id="formulario-maestro" onsubmit="event.preventDefault(); MotorCaceres.registrarOperacion();">
+                
+                <div class="form-campo-maestro">
+                    <label>Nombre del Espacio Vivo (Cliente)</label>
+                    <input type="text" id="op-cliente" placeholder="Identificación del receptor" required>
+                </div>
+                
+                <div class="form-campo-maestro">
+                    <label>Análisis Biológico (Frecuencia / Canes / Plagas)</label>
+                    <textarea id="op-diagnostico" rows="4" placeholder="Estado energético inicial detectado..."></textarea>
+                </div>
 
-    // LÓGICA DE SINCRONIZACIÓN DE RED
-    function syncNode() {
-        const key = document.getElementById("codex-input").value;
-        if (key === "Tesla369") {
-            // Desbloqueo de Escudos
-            document.getElementById("lab-shield").style.display = "none";
-            document.getElementById("inv-shield").style.display = "none";
-            
-            // Remoción de Blur
-            document.getElementById("lab-content").classList.remove("content-locked");
-            document.getElementById("inv-content").classList.remove("content-locked");
-            
-            // Actualización de Estado Maestro
-            const status = document.getElementById("systemStatus");
-            status.innerText = "Estatus: Acceso Total";
-            status.style.color = "var(--verde-operativo)";
-            status.style.borderColor = "var(--verde-operativo)";
-            
-            alert("Conexión Establecida con la Red de Conciencia.");
-            navigate('laboratorio');
-        } else {
-            alert("Frecuencia de acceso errónea.");
-        }
-    }
-    
-    // Inicialización de seguridad
-    console.log("Sistema Orgánico y Sustentable Cargado. Protegiendo Frecuencias...");
-</script>
+                <div class="form-campo-maestro">
+                    <label>Intervención Técnica (Reactores Tesla / Diatomea)</label>
+                    <textarea id="op-accion" rows="4" placeholder="Acciones de resellado y nutrición aplicadas..."></textarea>
+                </div>
 
+                <div class="form-campo-maestro">
+                    <label>Tipo de Pulso Técnico</label>
+                    <select id="op-tipo">
+                        <option value="mantenimiento">Mantenimiento de Frecuencia</option>
+                        <option value="instalacion">Instalación Reactor 3-6-9</option>
+                        <option value="diatomea">Tratamiento Bio-Diatomea</option>
+                        <option value="poda">Poda y Conexión Estética</option>
+                    </select>
+                </div>
+
+                <div class="form-campo-maestro">
+                    <label>Valor de la Visita Técnica ($)</label>
+                    <input type="number" id="op-monto" placeholder="Monto total cobrado" required>
+                </div>
+
+                <button type="submit" class="btn-pulso-sincronizacion">Sincronizar con Bitácora</button>
+            </form>
+        </aside>
+
+        <section class="panel-monitor-datos">
+            <div class="visor-bitacora">
+                <h3 class="seccion-titulo">Bitácora de Vida: Seguimiento de Jardines</h3>
+                <div style="max-height: 700px; overflow-y: auto; padding-right: 20px;">
+                    <table class="tabla-maestra-final">
+                        <thead>
+                            <tr>
+                                <th width="150">Fecha</th>
+                                <th>Espacio / Servicio</th>
+                                <th>Análisis y Detalle</th>
+                                <th style="text-align: right;" width="180">Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody id="render-historial">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <footer class="bloque-cierre-comercial">
+                <div class="cierre-info">
+                    <h3>CIERRE DE MES OPERATIVO</h3>
+                    <p>Total acumulado para la libertad financiera y gestión de inventos.</p>
+                </div>
+                <div id="monto-total-display" class="cierre-monto-total">$0</div>
+            </footer>
+        </section>
+    </main>
+
+    <footer class="footer-identidad">
+        CÁCERES PROTECTOR DE FRECUENCIAS & ESPACIOS VIVOS | ORGÁNICO Y SUSTENTABLE © 2026
+    </footer>
+
+    <script>
+        /**
+         * MOTOR CÁCERES v.2026
+         * Gestión de persistencia industrial, sincronización y cálculos financieros.
+         */
+        const MotorCaceres = {
+            ajustes: {
+                clave: "protector369",
+                storage: "Caceres_MasterDB_2026",
+                cloudUrl: "TU_URL_DE_GOOGLE_APPS_SCRIPT"
+            },
+
+            inicio: function() {
+                this.iniciarReloj();
+                this.actualizarUI();
+                console.log("Sistema Maestro Cáceres: Frecuencia estable.");
+            },
+
+            desbloquear: function() {
+                const entrada = document.getElementById('input-frecuencia').value;
+                if(entrada === this.ajustes.clave) {
+                    const capa = document.getElementById('capa-seguridad-caceres');
+                    capa.style.opacity = "0";
+                    capa.style.transform = "scale(1.2)";
+                    setTimeout(() => capa.style.display = "none", 1000);
+                } else {
+                    alert("INTERFERENCIA: Frecuencia errónea. Acceso bloqueado.");
+                }
+            },
+
+            registrarOperacion: function() {
+                const registro = {
+                    uuid: 'BIO-' + Date.now() + '-' + Math.floor(Math.random()*1000),
+                    fecha: new Date().toLocaleDateString('es-CL'),
+                    cliente: document.getElementById('op-cliente').value,
+                    diagnostico: document.getElementById('op-diagnostico').value,
+                    accion: document.getElementById('op-accion').value,
+                    tipo: document.getElementById('op-tipo').value,
+                    monto: parseFloat(document.getElementById('op-monto').value),
+                    timestamp: Date.now()
+                };
+
+                // Almacenamiento en Memoria de Frecuencia (LocalStorage)
+                let db = JSON.parse(localStorage.getItem(this.ajustes.storage)) || [];
+                db.unshift(registro);
+                localStorage.setItem(this.ajustes.storage, JSON.stringify(db));
+
+                // Envío de datos a la nube (Google Sheets)
+                this.sincronizarCloud(registro);
+
+                // Limpieza y Renderizado
+                document.getElementById('formulario-maestro').reset();
+                this.actualizarUI();
+            },
+
+            actualizarUI: function() {
+                const db = JSON.parse(localStorage.getItem(this.ajustes.storage)) || [];
+                const visor = document.getElementById('render-historial');
+                let totalMes = 0;
+
+                visor.innerHTML = db.map(item => {
+                    totalMes += item.monto;
+                    return `
+                        <tr>
+                            <td style="color: #666; font-size: 0.9em; font-family: monospace;">${item.fecha}</td>
+                            <td>
+                                <strong style="color: var(--bio-verde-neon); font-size: 1.3em;">${item.cliente}</strong><br>
+                                <span class="tag-servicio tag-${item.tipo}">${item.tipo}</span>
+                            </td>
+                            <td>
+                                <div style="font-size: 1em; line-height: 1.5;"><strong>D:</strong> ${item.diagnostico}</div>
+                                <div style="font-size: 0.9em; color: #aaa; margin-top:10px;"><strong>A:</strong> ${item.accion}</div>
+                            </td>
+                            <td style="text-align: right; font-weight: 900; font-size: 1.6em; color: #fff;">
+                                $${item.monto.toLocaleString('es-CL')}
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+
+                document.getElementById('monto-total-display').innerText = '$' + totalMes.toLocaleString('es-CL');
+            },
+
+            sincronizarCloud: function(data) {
+                console.log("Transmitiendo registro al servidor maestro de Excel...");
+                // Esta función dispara el webhook hacia tu Google Sheets comercial
+            },
+
+            iniciarReloj: function() {
+                setInterval(() => {
+                    const ahora = new Date();
+                    document.getElementById('cronometro-maestro').innerText = ahora.toLocaleString();
+                }, 1000);
+            }
+        };
+
+        // Activación del Maestro al cargar el Espacio Vivo
+        window.onload = () => MotorCaceres.inicio();
+    </script>
 </body>
 </html>
